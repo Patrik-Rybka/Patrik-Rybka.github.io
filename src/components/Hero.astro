@@ -2,37 +2,43 @@
 // src/components/Hero.astro
 ---
 
-<section class="py-12 sm:py-20">
-  <!-- Status badge -->
-  <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-6">
-    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-    Student IT • Otevřený novým příležitostem
-  </div>
-
-  <!-- Hlavní nadpis -->
-  <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-6">
-    Ahoj, jsem <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">Patrik Rybka</span>.
+<section class="pt-12 sm:pt-16 pb-12">
+  <h1 class="text-3xl sm:text-4xl font-semibold text-white tracking-tight mb-2">
+    Patrik Rybka
   </h1>
-
-  <!-- Úvodní popis -->
-  <p class="text-lg sm:text-xl text-neutral-300 max-w-2xl leading-relaxed mb-8">
-    Jsem student IT se zájmem o vývoj softwaru, webové technologie a moderní nástroje. 
-    Baví mě zkoumat, jak věci fungují pod kapotou, psát čistý kód a tvořit smysluplné projekty.
+  <p class="text-sm sm:text-base text-neutral-400 font-mono mb-6">
+    Student IT & Developer
   </p>
 
-  <!-- Akční tlačítka -->
-  <div class="flex flex-wrap items-center gap-4">
+  <p class="text-base sm:text-lg text-neutral-300 leading-relaxed max-w-2xl mb-8">
+    Věnuji se vývoji softwaru, webovým technologiím a zkoumání systémů. 
+    Kladu důraz na vizuální minimalismus, spolehlivou funkčnost a čistou architekturu bez zbytečných příkras.
+  </p>
+
+  <!-- Přímé rychlé odkazy -->
+  <div class="flex flex-wrap items-center gap-5 text-sm">
     <a
-      href="#projekty"
-      class="px-5 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-medium shadow-lg shadow-indigo-600/25 transition-all duration-200"
+      href="https://github.com/Patrik-Rybka"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-1 text-neutral-300 hover:text-white underline underline-offset-4 decoration-neutral-700 hover:decoration-white transition-colors"
     >
-      Moje projekty
+      GitHub
+      <span class="text-xs text-neutral-500">↗</span>
     </a>
     <a
-      href="#kontakt"
-      class="px-5 py-3 rounded-xl bg-neutral-900 hover:bg-neutral-800 text-neutral-200 font-medium border border-neutral-800 transition-all duration-200"
+      href="mailto:kontakt@patrikrybka.me"
+      class="inline-flex items-center gap-1 text-neutral-300 hover:text-white underline underline-offset-4 decoration-neutral-700 hover:decoration-white transition-colors"
     >
-      Kontaktovat mě
+      kontakt@patrikrybka.me
+      <span class="text-xs text-neutral-500">↗</span>
+    </a>
+    <a
+      href="#projekty"
+      class="inline-flex items-center gap-1 text-neutral-400 hover:text-white transition-colors"
+    >
+      Vybrané projekty
+      <span class="text-xs">↓</span>
     </a>
   </div>
 </section>

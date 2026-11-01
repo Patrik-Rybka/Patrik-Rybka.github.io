@@ -10,7 +10,7 @@ const posts = (await getCollection('blog')).sort(
 const formatDate = (date: Date) => {
   return new Intl.DateTimeFormat('cs-CZ', {
     day: 'numeric',
-    month: 'long',
+    month: 'numeric',
     year: 'numeric',
   }).format(date);
 };
@@ -20,61 +20,39 @@ const formatDate = (date: Date) => {
   title="Blog & Zápisky | Patrik Rybka"
   description="Články a postřehy o programování, technologiích a mých projektech."
 >
-  <div class="py-8">
-    <!-- Hlavička stránky -->
+  <div class="py-12">
     <div class="mb-10">
-      <span class="text-xs font-semibold uppercase tracking-wider text-indigo-400">Zápisky</span>
-      <h1 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Blog</h1>
-      <p class="text-neutral-400 mt-2 text-base max-w-2xl">
-        Postřehy ze studia IT, poznámky k technologiím, které zkouším, a postupy při řešení zajímavých problémů.
+      <h1 class="text-2xl sm:text-3xl font-semibold text-white tracking-tight">
+        Zápisky & Blog
+      </h1>
+      <p class="text-sm text-neutral-400 mt-2 font-mono">
+        Články, poznámky k technologiím a řešení reálných problémů.
       </p>
     </div>
 
-    <!-- Seznam článků -->
     {posts.length === 0 ? (
-      <div class="p-8 rounded-2xl bg-neutral-900/30 border border-neutral-800/80 text-center text-neutral-400">
-        <p class="text-lg font-medium text-neutral-300 mb-1">Zatím tu nejsou žádné články</p>
-        <p class="text-sm">První článek již brzy přibude!</p>
+      <div class="py-12 text-center font-mono text-xs text-neutral-400">
+        Zatím tu nejsou žádné články.
       </div>
     ) : (
-      <div class="space-y-6">
+      <div class="divide-y divide-neutral-900 border-t border-b border-neutral-900">
         {posts.map((post) => (
-          <article class="p-6 rounded-2xl bg-neutral-900/40 border border-neutral-800/80 hover:border-neutral-700/80 transition-all group">
-            <div class="flex flex-wrap items-center gap-3 text-xs text-neutral-400 mb-2">
-              <time datetime={post.data.pubDate.toISOString()}>
-                {formatDate(post.data.pubDate)}
-              </time>
-              {post.data.tags && post.data.tags.length > 0 && (
-                <div class="flex flex-wrap gap-1.5">
-                  {post.data.tags.map((tag: string) => (
-                    <span class="px-2 py-0.5 rounded-md bg-neutral-800/80 text-neutral-300">
-                      #{tag}
-                    </span>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            <h2 class="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors mb-2">
-              <a href={`/blog/${post.id}`}>
+          <a
+            href={`/blog/${post.id}`}
+            class="py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 group block"
+          >
+            <div>
+              <h2 class="text-base font-medium text-white group-hover:underline underline-offset-4 decoration-neutral-600 transition-colors">
                 {post.data.title}
-              </a>
-            </h2>
-
-            <p class="text-neutral-400 text-sm leading-relaxed mb-4">
-              {post.data.description}
-            </p>
-
-            <a
-              href={`/blog/${post.id}`}
-              class="inline-flex items-center gap-1.5 text-sm font-medium text-indigo-400 hover:text-indigo-300 transition-colors"
-            >
-              Přečíst článek
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
-          </article>
+              </h2>
+              <p class="text-sm text-neutral-400 mt-1 line-clamp-2 max-w-xl">
+                {post.data.description}
+              </p>
+            </div>
+            <span class="text-xs font-mono text-neutral-400 whitespace-nowrap sm:text-right">
+              {formatDate(post.data.pubDate)}
+            </span>
+          </a>
         ))}
       </div>
     )}

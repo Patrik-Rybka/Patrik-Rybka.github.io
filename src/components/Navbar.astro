@@ -1,6 +1,5 @@
 ---
 const navItems = [
-  { name: 'Domů', href: '/' },
   { name: 'O mně', href: '/#o-mne' },
   { name: 'Projekty', href: '/#projekty' },
   { name: 'Blog', href: '/blog' },
@@ -8,20 +7,19 @@ const navItems = [
 ];
 ---
 
-<header class="sticky top-0 z-50 w-full border-b border-neutral-800/80 bg-neutral-950/80 backdrop-blur-md">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-    <!-- Logo / Jméno -->
-    <a href="/" class="flex items-center gap-2 font-bold text-lg text-white hover:text-indigo-400 transition-colors">
-      <span class="w-2.5 h-2.5 rounded-full bg-indigo-500"></span>
+<header class="sticky top-0 z-50 w-full border-b border-neutral-900 bg-[#0c0c0c]/85 backdrop-blur-md">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
+    <!-- Jméno -->
+    <a href="/" class="text-sm font-medium text-white hover:text-neutral-300 transition-colors tracking-tight">
       Patrik Rybka
     </a>
 
-    <!-- Navigační odkazy -->
-    <nav class="flex items-center gap-1 sm:gap-2">
+    <!-- Navigace -->
+    <nav class="flex items-center gap-4 sm:gap-6 text-xs sm:text-sm">
       {navItems.map((item) => (
         <a
           href={item.href}
-          class="px-2.5 py-1.5 sm:px-3 sm:py-2 text-sm font-medium text-neutral-300 hover:text-white hover:bg-neutral-900 rounded-lg transition-colors"
+          class="text-neutral-400 hover:text-white transition-colors"
         >
           {item.name}
         </a>

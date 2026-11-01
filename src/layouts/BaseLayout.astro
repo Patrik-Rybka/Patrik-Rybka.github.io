@@ -9,8 +9,8 @@ interface Props {
 }
 
 const {
-  title = "Patrik Rybka | IT Student & Developer",
-  description = "Osobní portfolio a blog Patrika Rybky. Zápisky o programování, technologiích a projektech."
+  title = "Patrik Rybka | Student IT & Developer",
+  description = "Osobní portfolio a blog Patrika Rybky. Minimalistický web o vývoji softwaru, webových technologiích a projektech."
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://patrikrybka.me');
@@ -29,16 +29,16 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://patrikry
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
 
-    <!-- Open Graph pro hezké náhledy na sociálních sítích a Discordu -->
+    <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:type" content="website" />
   </head>
-  <body class="bg-neutral-950 text-neutral-100 antialiased min-h-screen flex flex-col selection:bg-indigo-500 selection:text-white">
+  <body class="bg-[#0c0c0c] text-neutral-200 antialiased min-h-screen flex flex-col selection:bg-neutral-800 selection:text-white font-sans">
     <Navbar />
     
-    <main class="flex-grow w-full max-w-4xl mx-auto px-4 sm:px-6 py-10">
+    <main class="flex-grow w-full max-w-3xl mx-auto px-4 sm:px-6">
       <slot />
     </main>
 
