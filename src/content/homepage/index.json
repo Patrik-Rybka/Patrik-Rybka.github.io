@@ -1,0 +1,15 @@
+{
+  "heroEyebrow": "IT Systems & Terénní Reportáž",
+  "heroTitle": "Patrik Rybka",
+  "heroDesc": "Student IT se zaměřením na počítačové sítě, Linux a hardware. Paralelně působím v terénu s bezzrcadlovkou Canon R10, kde zachycuji autentickou atmosféru letních akcí, táborů a festivalů. V obou oborech sázím na přímé, funkční a spolehlivé řešení.",
+  "aboutSystemsHeadline": "Systémy & Sítě",
+  "aboutSystemsCopy": "Věnuji se návrhu a správě LAN infrastruktur, konfiguraci směrování, přepínání a segmentaci sítí přes VLAN. Běžně pracuji v linuxovém terminálu (Debian, Ubuntu), spravuji služby přes SSH a využívám kontejnerizaci v Dockeru. K tomu patří i hardware: diagnostika komponent a stavba spolehlivých PC sestav.",
+  "aboutSystemsTags": ["TCP/IP & VLAN", "Linux / Bash", "Docker", "Git", "PC Hardware"],
+  "aboutGearHeadline": "Foto & Video kit",
+  "aboutGearCopy": "Mým hlavním pracovním nástrojem je bezzrcadlovka Canon EOS R10. Pro reportáže v běhu nasazuji univerzální zoom RF-S 18–150 mm IS STM, který pokryje celou scénu bez nutnosti měnit objektiv v prachu. Na portréty a nízké světlo používám pevnou padesátku RF 50 mm f/1.8. Výbavu doplňuje směrový mikrofon s ochranou proti větru a bi-color LED světla.",
+  "aboutGearTags": ["Canon EOS R10", "RF-S 18–150 mm", "RF 50 mm f/1.8", "Shotgun Mic + Deadcat", "Bi-Color LED"],
+  "contactHeadline": "Pojďme spolupracovat",
+  "contactCopy": "Hledáte fotografa pro vaši akci, tábor či reportáž, nebo chcete probrat síťovou infrastrukturu a Linux? Napište mi.",
+  "contactEmail": "kontakt@patrikrybka.me",
+  "contactGithub": "https://github.com/Patrik-Rybka"
+}

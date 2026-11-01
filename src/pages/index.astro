@@ -1,5 +1,6 @@
 ---
 // src/pages/index.astro
+import homepageData from '../content/homepage/index.json';
 ---
 
 <!doctype html>
@@ -297,14 +298,15 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: center 20%;
         display: block;
-        filter: grayscale(12%) contrast(108%);
+        filter: contrast(105%);
         transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
       }
 
       .hero-visual-card:hover img {
         transform: scale(1.045);
-        filter: grayscale(0%) contrast(110%);
+        filter: contrast(108%);
       }
 
       .hero-visual-badge {
@@ -645,7 +647,7 @@
         color: #ffffff;
       }
 
-      /* --- KONTAKT SE глобальным osvětlením --- */
+      /* --- KONTAKT SE prostorovým osvětlením --- */
       .contact-banner {
         background: linear-gradient(180deg, var(--surface) 0%, rgba(20, 21, 28, 0.6) 100%);
         border: 1px solid var(--border);
@@ -769,7 +771,7 @@
           
           <div class="hero-text">
             <span class="hero-eyebrow">
-              IT Systems & Terénní Reportáž
+              {homepageData.heroEyebrow}
             </span>
 
             <h1 class="hero-title">
@@ -778,8 +780,7 @@
             </h1>
 
             <p class="hero-desc">
-              Student IT se zaměřením na počítačové sítě, Linux a hardware. 
-              Paralelně působím v terénu s bezzrcadlovkou Canon R10, kde zachycuji autentickou atmosféru letních akcí, táborů a festivalů. V obou oborech sázím na přímé, funkční a spolehlivé řešení.
+              {homepageData.heroDesc}
             </p>
 
             <div class="hero-actions">
@@ -792,11 +793,11 @@
             </div>
           </div>
 
-          <!-- Hero plakátová kotva (připraveno na tvou fotku) -->
+          <!-- Hero plakátová kotva (Ostrý studiový portrét) -->
           <div class="hero-visual-card">
             <img 
-              src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?auto=format&fit=crop&w=1000&q=80" 
-              alt="Patrik Rybka – Foto & IT" 
+              src="/images/patrik-portrait.jpg" 
+              alt="Patrik Rybka" 
               loading="eager"
             />
             <div class="hero-visual-badge">
@@ -841,18 +842,16 @@
           <div class="split-card">
             <div>
               <div class="card-tag">INFRASTRUKTURA & KÓD</div>
-              <h3 class="card-headline">Systémy & Sítě</h3>
+              <h3 class="card-headline">{homepageData.aboutSystemsHeadline}</h3>
               <p class="card-copy">
-                Věnuji se návrhu a správě LAN infrastruktur, konfiguraci směrování, přepínání a segmentaci sítí přes VLAN. Běžně pracuji v linuxovém terminálu (Debian, Ubuntu), spravuji služby přes SSH a využívám kontejnerizaci v Dockeru. K tomu patří i hardware: diagnostika komponent a stavba spolehlivých PC sestav.
+                {homepageData.aboutSystemsCopy}
               </p>
             </div>
             
             <div class="gear-tags">
-              <span class="gear-tag">TCP/IP & VLAN</span>
-              <span class="gear-tag">Linux / Bash</span>
-              <span class="gear-tag">Docker</span>
-              <span class="gear-tag">Git</span>
-              <span class="gear-tag">PC Hardware</span>
+              {homepageData.aboutSystemsTags.map((tag: string) => (
+                <span class="gear-tag">{tag}</span>
+              ))}
             </div>
           </div>
 
@@ -860,18 +859,16 @@
           <div class="split-card">
             <div>
               <div class="card-tag">TERÉNNÍ VÝBAVA</div>
-              <h3 class="card-headline">Foto & Video kit</h3>
+              <h3 class="card-headline">{homepageData.aboutGearHeadline}</h3>
               <p class="card-copy">
-                Mým hlavním pracovním nástrojem je bezzrcadlovka <strong>Canon EOS R10</strong>. Pro reportáže v běhu nasazuji univerzální zoom <strong>RF-S 18–150 mm IS STM</strong>, který pokryje celou scénu bez nutnosti měnit objektiv v prachu. Na portréty a nízké světlo používám pevnou padesátku <strong>RF 50 mm f/1.8</strong>. Výbavu doplňuje směrový mikrofon s ochranou proti větru a bi-color LED světla.
+                {homepageData.aboutGearCopy}
               </p>
             </div>
 
             <div class="gear-tags">
-              <span class="gear-tag">Canon EOS R10</span>
-              <span class="gear-tag">RF-S 18–150 mm</span>
-              <span class="gear-tag">RF 50 mm f/1.8</span>
-              <span class="gear-tag">Shotgun Mic + Deadcat</span>
-              <span class="gear-tag">Bi-Color LED</span>
+              {homepageData.aboutGearTags.map((tag: string) => (
+                <span class="gear-tag">{tag}</span>
+              ))}
             </div>
           </div>
 
@@ -905,17 +902,18 @@
             </div>
           </div>
 
-          <!-- 2. Vertikální portrét -->
+          <!-- 2. Vertikální portrét / Autentický terén s Canonem -->
           <div class="mosaic-item span-5">
             <img 
-              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" 
-              alt="Portrét na pevnou padesátku" 
+              src="/images/patrik-field.jpg" 
+              alt="Patrik v terénu s Canonem R10" 
               loading="lazy"
+              style="object-position: center 25%;"
             />
             <div class="mosaic-info">
-              <h4>Portrét na pevnou padesátku</h4>
-              <p>Přirozené světlo a nízká hloubka ostrosti</p>
-              <span class="mosaic-exif">RF 50 mm · f/1.8</span>
+              <h4>Patrik v terénu</h4>
+              <p>Pohotová reportáž a práce s tělem v plenéru</p>
+              <span class="mosaic-exif">Canon EOS R10 · 18–150 mm</span>
             </div>
           </div>
 
@@ -1016,17 +1014,17 @@
       <!-- KONTAKT -->
       <section id="kontakt" class="contact-banner">
         <div class="contact-lead-text">
-          <h2>Pojďme spolupracovat</h2>
+          <h2>{homepageData.contactHeadline}</h2>
           <p>
-            Hledáte fotografa pro vaši akci, tábor či reportáž, nebo chcete probrat síťovou infrastrukturu a Linux? Napište mi.
+            {homepageData.contactCopy}
           </p>
         </div>
 
         <div class="contact-cta-group">
-          <a href="mailto:kontakt@patrikrybka.me" class="btn-pill btn-white">
-            kontakt@patrikrybka.me ↗
+          <a href={`mailto:${homepageData.contactEmail}`} class="btn-pill btn-white">
+            {homepageData.contactEmail} ↗
           </a>
-          <a href="https://github.com/Patrik-Rybka" target="_blank" rel="noopener noreferrer" class="btn-pill btn-ghost">
+          <a href={homepageData.contactGithub} target="_blank" rel="noopener noreferrer" class="btn-pill btn-ghost">
             GitHub profil ↗
           </a>
         </div>
