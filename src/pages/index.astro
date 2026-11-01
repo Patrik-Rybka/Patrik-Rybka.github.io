@@ -1,14 +1,16 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Skills from '../components/Skills.astro';
+import Projects from '../components/Projects.astro';
+import LatestPosts from '../components/LatestPosts.astro';
+import Contact from '../components/Contact.astro';
 ---
 
 <BaseLayout title="Patrik Rybka | IT Student & Developer">
-  <div class="py-12 text-center sm:text-left">
-    <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-white mb-4">
-      Patrik Rybka
-    </h1>
-    <p class="text-xl text-neutral-400">
-      Student IT & Junior Developer
-    </p>
-  </div>
+  <Hero />
+  <Skills />
+  <Projects />
+  <LatestPosts />
+  <Contact />
 </BaseLayout>
