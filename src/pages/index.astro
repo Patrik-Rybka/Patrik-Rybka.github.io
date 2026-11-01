@@ -10,24 +10,26 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
-    <title>Patrik Rybka — IT & Visual Storyteller</title>
-    <meta name="description" content="Osobní web a autorské portfolio Patrika Rybky. Propojení síťové infrastruktury a Linuxu s terénní fotografií a videotvorbou." />
+    <title>Patrik Rybka — IT & Visual Portfolio</title>
+    <meta name="description" content="Osobní portfolio Patrika Rybky. Správa sítí, Linux a autentická foto a video reportáž v terénu." />
     <link rel="canonical" href="https://patrikrybka.me" />
 
-    <meta property="og:title" content="Patrik Rybka — IT & Visual Storyteller" />
-    <meta property="og:description" content="Osobní web a autorské portfolio Patrika Rybky. Propojení síťové infrastruktury a Linuxu s terénní fotografií a videotvorbou." />
+    <meta property="og:title" content="Patrik Rybka — IT & Visual Portfolio" />
+    <meta property="og:description" content="Osobní portfolio Patrika Rybky. Správa sítí, Linux a autentická foto a video reportáž v terénu." />
     <meta property="og:url" content="https://patrikrybka.me" />
     <meta property="og:type" content="website" />
 
     <style is:inline>
+      /* --- DESIGN SYSTEM: CREATIVE EDITORIAL DARK (Webnode / Webflow inspirováno) --- */
       :root {
-        --bg: #0c0c0e;
-        --surface: #141418;
+        --bg: #09090b;
+        --surface: #121216;
+        --surface-hover: #18181f;
+        --border: rgba(255, 255, 255, 0.08);
+        --border-active: rgba(255, 255, 255, 0.2);
         --text: #f4f4f5;
         --text-muted: #a1a1aa;
         --text-dim: #71717a;
-        --border: #222226;
-        --border-subtle: #1c1c20;
         --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
       }
@@ -38,691 +40,851 @@
         background-color: var(--bg);
         color: var(--text);
         font-family: var(--font-sans);
-        line-height: 1.65;
+        line-height: 1.6;
         -webkit-font-smoothing: antialiased;
         text-rendering: optimizeLegibility;
       }
 
       body {
-        padding: 0 1.5rem 6rem;
+        min-height: 100vh;
+        overflow-x: hidden;
       }
 
       .container {
-        max-width: 1040px;
+        max-width: 1120px;
         margin: 0 auto;
+        padding: 0 1.5rem;
       }
 
       .mono {
         font-family: var(--font-mono);
       }
 
-      /* Odkazy */
-      a {
-        color: var(--text);
-        text-decoration: underline;
-        text-underline-offset: 4px;
-        text-decoration-color: #3f3f46;
-        transition: text-decoration-color 0.2s, color 0.2s;
-      }
-      a:hover {
-        text-decoration-color: #fff;
+      /* Plovoucí Navigační Dok (Inspirováno Webflow) */
+      .nav-dock-wrapper {
+        position: fixed;
+        top: 1.5rem;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        padding: 0 1rem;
+        pointer-events: none;
       }
 
-      .arrow-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.4rem;
-        color: var(--text);
-        font-weight: 500;
-        text-decoration: none;
-        font-size: 0.95rem;
-      }
-      .arrow-link:hover {
-        text-decoration: underline;
-        text-underline-offset: 4px;
-      }
-
-      /* Navigace */
-      header {
-        padding: 2rem 0 3.5rem;
-      }
-      .nav-bar {
+      .nav-dock {
+        pointer-events: auto;
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        flex-wrap: wrap;
-        gap: 1.5rem;
-      }
-      .nav-logo {
-        font-weight: 700;
-        font-size: 1.05rem;
-        letter-spacing: -0.02em;
-        text-decoration: none;
-        color: #fff;
-      }
-      .nav-links {
-        display: flex;
         gap: 1.75rem;
-        font-size: 0.875rem;
+        padding: 0.65rem 1.5rem;
+        background: rgba(18, 18, 22, 0.82);
+        backdrop-filter: blur(16px);
+        border: 1px solid var(--border);
+        border-radius: 9999px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
       }
-      .nav-links a {
+
+      .dock-brand {
+        font-weight: 700;
+        font-size: 0.95rem;
+        color: #fff;
+        text-decoration: none;
+        letter-spacing: -0.02em;
+        margin-right: 0.5rem;
+      }
+
+      .dock-links {
+        display: flex;
+        gap: 1.25rem;
+        font-size: 0.85rem;
+        font-weight: 500;
+      }
+
+      .dock-links a {
         color: var(--text-muted);
         text-decoration: none;
-        transition: color 0.2s;
+        transition: color 0.15s;
       }
-      .nav-links a:hover {
+
+      .dock-links a:hover {
         color: #fff;
       }
 
-      /* Plakátová Asymetrická Hero sekce */
+      /* Hero Sekce - Velkolepá, odvážná typografie & vizuál */
+      .hero-section {
+        padding: 8rem 0 5rem;
+      }
+
       .hero-grid {
         display: grid;
         grid-template-columns: 1.15fr 0.85fr;
-        gap: 4.5rem;
+        gap: 4rem;
         align-items: center;
-        padding: 2rem 0 5rem;
       }
-      .hero-text {
-        max-width: 540px;
-      }
-      .hero-kicker {
-        display: block;
+
+      .hero-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
         font-size: 0.8rem;
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-        color: var(--text-dim);
         font-family: var(--font-mono);
-        margin-bottom: 1rem;
-      }
-      h1 {
-        font-size: clamp(2.5rem, 5vw, 3.75rem);
-        font-weight: 800;
-        letter-spacing: -0.04em;
-        line-height: 1.1;
-        color: #fff;
-        margin-bottom: 1.5rem;
-      }
-      .hero-subtitle {
-        font-size: 1.15rem;
-        color: var(--text-muted);
-        line-height: 1.6;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: var(--text-dim);
         margin-bottom: 1.25rem;
       }
+
+      .hero-title {
+        font-size: clamp(3rem, 7vw, 5.25rem);
+        font-weight: 900;
+        letter-spacing: -0.04em;
+        line-height: 0.98;
+        color: #fff;
+        margin-bottom: 1.5rem;
+        text-transform: uppercase;
+      }
+
+      .hero-title .outline {
+        color: transparent;
+        -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.4);
+      }
+
       .hero-desc {
-        font-size: 0.975rem;
+        font-size: 1.125rem;
         color: var(--text-muted);
         line-height: 1.65;
+        max-width: 520px;
         margin-bottom: 2.25rem;
       }
+
       .hero-actions {
         display: flex;
         flex-wrap: wrap;
-        gap: 2rem;
+        gap: 1.25rem;
+        align-items: center;
       }
 
-      /* Vizuální plakátová kotva v Hero */
-      .hero-visual {
-        position: relative;
-      }
-      .hero-poster {
-        width: 100%;
-        aspect-ratio: 4 / 5;
-        object-fit: cover;
-        border-radius: 8px;
-        background-color: var(--surface);
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
-        filter: grayscale(15%) contrast(105%);
-        transition: filter 0.3s;
-        display: block;
-      }
-      .hero-poster:hover {
-        filter: grayscale(0%) contrast(105%);
-      }
-      .hero-poster-caption {
-        margin-top: 0.75rem;
-        font-size: 0.75rem;
-        color: var(--text-dim);
-        font-family: var(--font-mono);
-        display: flex;
-        justify-content: space-between;
-      }
-
-      /* Oddělovače */
-      .divider {
-        border: 0;
-        border-top: 1px solid var(--border);
-        margin: 5rem 0;
-      }
-
-      /* Typografie sekcí */
-      .section-header {
-        margin-bottom: 3rem;
-      }
-      h2 {
-        font-size: 1.85rem;
-        font-weight: 700;
-        letter-spacing: -0.03em;
-        color: #fff;
-        line-height: 1.2;
-      }
-      .section-sub {
-        font-size: 1rem;
-        color: var(--text-muted);
-        margin-top: 0.5rem;
-        max-width: 600px;
-      }
-
-      /* O mně & Výbava (Editorial Text Columns) */
-      .editorial-columns {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-      }
-      .column-title {
-        font-size: 1.15rem;
-        font-weight: 700;
-        color: #fff;
-        letter-spacing: -0.02em;
-        margin-bottom: 1.75rem;
-        padding-bottom: 0.75rem;
-        border-bottom: 1px solid var(--border-subtle);
-      }
-      .spec-group {
-        display: flex;
-        flex-direction: column;
-        gap: 1.75rem;
-      }
-      .spec-item dt {
+      .btn-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.8rem 1.6rem;
+        border-radius: 9999px;
+        font-size: 0.875rem;
         font-weight: 600;
-        color: #fff;
-        font-size: 0.95rem;
-        margin-bottom: 0.25rem;
-      }
-      .spec-item dd {
-        color: var(--text-muted);
-        font-size: 0.9rem;
-        line-height: 1.6;
+        text-decoration: none;
+        transition: transform 0.15s, background-color 0.15s;
       }
 
-      /* Asymetrická Galerie (Magazine Layout) */
-      .magazine-grid {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        gap: 1.5rem;
+      .btn-pill:hover {
+        transform: translateY(-1px);
       }
-      .magazine-item {
+
+      .btn-white {
+        background: #fff;
+        color: #000;
+      }
+
+      .btn-white:hover {
+        background: #e4e4e7;
+      }
+
+      .btn-ghost {
+        background: rgba(255, 255, 255, 0.05);
+        color: #fff;
+        border: 1px solid var(--border);
+      }
+
+      .btn-ghost:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: var(--border-active);
+      }
+
+      /* Hero Visual Banner */
+      .hero-visual-card {
         position: relative;
+        border-radius: 12px;
         overflow: hidden;
-        border-radius: 6px;
-        background-color: var(--surface);
+        aspect-ratio: 4 / 5;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
       }
-      .magazine-item img {
+
+      .hero-visual-card img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         display: block;
-        transition: transform 0.4s ease, filter 0.3s ease;
+        filter: grayscale(15%) contrast(108%);
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s;
+      }
+
+      .hero-visual-card:hover img {
+        transform: scale(1.04);
+        filter: grayscale(0%) contrast(108%);
+      }
+
+      .hero-visual-badge {
+        position: absolute;
+        bottom: 1.25rem;
+        left: 1.25rem;
+        right: 1.25rem;
+        padding: 0.85rem 1.25rem;
+        background: rgba(9, 9, 11, 0.85);
+        backdrop-filter: blur(12px);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.75rem;
+        font-family: var(--font-mono);
+        color: var(--text-muted);
+      }
+
+      .hero-visual-badge strong {
+        color: #fff;
+        font-weight: 600;
+      }
+
+      /* Rychlé statistiky / pilíře */
+      .stats-strip {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        padding: 3rem 0;
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+        margin: 3rem 0 6rem;
+      }
+
+      .stat-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+
+      .stat-num {
+        font-size: 1.75rem;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        color: #fff;
+      }
+
+      .stat-label {
+        font-size: 0.85rem;
+        color: var(--text-dim);
+        font-family: var(--font-mono);
+      }
+
+      /* Nadpisy sekcí */
+      .section-heading-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 3.5rem;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+      }
+
+      .section-title {
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        color: #fff;
+      }
+
+      .section-subtitle {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        max-width: 480px;
+      }
+
+      /* O mně & Výbava - Kreativní Split */
+      .split-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3.5rem;
+        margin-bottom: 7rem;
+      }
+
+      .split-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: border-color 0.2s;
+      }
+
+      .split-card:hover {
+        border-color: var(--border-active);
+      }
+
+      .card-tag {
+        font-size: 0.75rem;
+        font-family: var(--font-mono);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--text-dim);
+        margin-bottom: 1rem;
+      }
+
+      .card-headline {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #fff;
+        letter-spacing: -0.02em;
+        margin-bottom: 1.25rem;
+      }
+
+      .card-copy {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+        line-height: 1.65;
+        margin-bottom: 2rem;
+      }
+
+      .gear-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--border);
+      }
+
+      .gear-tag {
+        font-size: 0.75rem;
+        font-family: var(--font-mono);
+        padding: 0.35rem 0.75rem;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        color: var(--text);
+      }
+
+      /* Magazínová Fotogalerie */
+      .gallery-container {
+        margin-bottom: 7rem;
+      }
+
+      .magazine-mosaic {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1.25rem;
+      }
+
+      .mosaic-item {
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        background: var(--surface);
+        border: 1px solid var(--border);
+      }
+
+      .mosaic-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s;
         filter: brightness(0.92);
       }
-      .magazine-item:hover img {
+
+      .mosaic-item:hover img {
         transform: scale(1.03);
         filter: brightness(1.02);
       }
 
-      .magazine-item figcaption {
+      .mosaic-info {
         position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        padding: 1.25rem;
-        background: linear-gradient(to top, rgba(12,12,14,0.95) 0%, rgba(12,12,14,0.4) 70%, transparent 100%);
-        opacity: 0;
-        transition: opacity 0.2s ease;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-      }
-      .magazine-item:hover figcaption {
-        opacity: 1;
-      }
-      .caption-text strong {
-        display: block;
-        color: #fff;
-        font-size: 0.9rem;
-        font-weight: 600;
-      }
-      .caption-text span {
-        font-size: 0.75rem;
-        color: var(--text-muted);
-      }
-      .caption-tech {
-        font-family: var(--font-mono);
-        font-size: 0.75rem;
-        color: #fff;
-        white-space: nowrap;
-      }
-
-      /* Rozložení mřížky */
-      .col-12 { grid-column: span 12; aspect-ratio: 21 / 9; }
-      .col-7  { grid-column: span 7; aspect-ratio: 16 / 10; }
-      .col-5  { grid-column: span 5; aspect-ratio: 4 / 5; }
-      .col-6  { grid-column: span 6; aspect-ratio: 16 / 10; }
-
-      /* Seriál & Návody */
-      .series-list {
+        inset: 0;
+        background: linear-gradient(to top, rgba(9,9,11,0.92) 0%, rgba(9,9,11,0.2) 50%, transparent 100%);
+        padding: 1.5rem;
         display: flex;
         flex-direction: column;
+        justify-content: flex-end;
+        opacity: 0;
+        transition: opacity 0.25s ease;
       }
-      .series-row {
-        display: grid;
-        grid-template-columns: 3.5rem 1fr auto;
-        gap: 2rem;
-        align-items: baseline;
-        padding: 2.25rem 0;
-        border-bottom: 1px solid var(--border);
-        transition: background 0.15s;
+
+      .mosaic-item:hover .mosaic-info {
+        opacity: 1;
       }
-      .series-row:first-child {
-        border-top: 1px solid var(--border);
-      }
-      .series-num {
-        font-size: 2rem;
-        font-weight: 800;
-        color: var(--border);
-        font-family: var(--font-mono);
-        line-height: 1;
-      }
-      .series-content h3 {
-        font-size: 1.15rem;
+
+      .mosaic-info h4 {
+        font-size: 1.05rem;
         font-weight: 700;
         color: #fff;
-        margin-bottom: 0.4rem;
+        margin-bottom: 0.2rem;
+      }
+
+      .mosaic-info p {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        margin-bottom: 0.5rem;
+      }
+
+      .mosaic-exif {
+        font-size: 0.75rem;
+        font-family: var(--font-mono);
+        color: #fff;
+      }
+
+      .span-12 { grid-column: span 12; aspect-ratio: 21 / 9; }
+      .span-7  { grid-column: span 7; aspect-ratio: 16 / 10; }
+      .span-5  { grid-column: span 5; aspect-ratio: 4 / 5; }
+      .span-6  { grid-column: span 6; aspect-ratio: 16 / 10; }
+
+      /* Návody & Seriál */
+      .series-section {
+        margin-bottom: 7rem;
+      }
+
+      .series-stack {
+        display: flex;
+        flex-direction: column;
+        border-top: 1px solid var(--border);
+      }
+
+      .series-entry {
+        display: grid;
+        grid-template-columns: 4rem 1fr auto;
+        gap: 2rem;
+        align-items: center;
+        padding: 2.25rem 1rem;
+        border-bottom: 1px solid var(--border);
+        text-decoration: none;
+        color: inherit;
+        border-radius: 8px;
+        transition: background-color 0.2s, padding-left 0.2s;
+      }
+
+      .series-entry:hover {
+        background-color: var(--surface);
+        padding-left: 1.5rem;
+      }
+
+      .series-number {
+        font-size: 2.25rem;
+        font-weight: 900;
+        letter-spacing: -0.04em;
+        color: rgba(255, 255, 255, 0.2);
+        font-family: var(--font-mono);
+      }
+
+      .series-entry:hover .series-number {
+        color: #fff;
+      }
+
+      .series-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 0.35rem;
         letter-spacing: -0.01em;
       }
-      .series-content h3 a {
-        text-decoration: none;
-      }
-      .series-content h3 a:hover {
-        text-decoration: underline;
-      }
-      .series-content p {
-        font-size: 0.925rem;
+
+      .series-text {
+        font-size: 0.95rem;
         color: var(--text-muted);
-        line-height: 1.55;
-        max-width: 620px;
+        line-height: 1.5;
+        max-width: 640px;
       }
-      .series-action {
+
+      .series-badge {
         font-size: 0.85rem;
         font-family: var(--font-mono);
-        color: var(--text-dim);
-        white-space: nowrap;
-      }
-      .series-action a {
         color: #fff;
-        text-decoration: none;
-        font-weight: 600;
-      }
-      .series-action a:hover {
-        text-decoration: underline;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
       }
 
-      /* Kontakt */
-      .contact-block {
-        padding-top: 1rem;
-      }
-      .contact-lead {
-        font-size: 1.25rem;
-        color: #fff;
-        font-weight: 600;
-        margin-bottom: 0.75rem;
-        letter-spacing: -0.02em;
-      }
-      .contact-text {
-        font-size: 1rem;
-        color: var(--text-muted);
-        max-width: 580px;
-        margin-bottom: 2rem;
-        line-height: 1.6;
-      }
-      .contact-links {
+      /* Kontakt Sekce */
+      .contact-banner {
+        background: linear-gradient(180deg, var(--surface) 0%, rgba(18, 18, 22, 0.4) 100%);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 4rem 3rem;
         display: flex;
+        justify-content: space-between;
+        align-items: center;
         flex-wrap: wrap;
         gap: 2.5rem;
-        font-size: 1.05rem;
-        font-weight: 500;
+        margin-bottom: 5rem;
       }
 
-      /* Patička */
+      .contact-lead-text h2 {
+        font-size: 2.25rem;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        color: #fff;
+        margin-bottom: 0.75rem;
+      }
+
+      .contact-lead-text p {
+        font-size: 1.05rem;
+        color: var(--text-muted);
+        max-width: 500px;
+      }
+
+      .contact-cta-group {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      /* Footer */
       footer {
-        margin-top: 6rem;
-        padding-top: 2rem;
-        border-top: 1px solid var(--border-subtle);
-        font-size: 0.8rem;
-        color: var(--text-dim);
-        font-family: var(--font-mono);
+        padding: 2rem 0;
+        border-top: 1px solid var(--border);
         display: flex;
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
         gap: 1rem;
+        font-size: 0.8rem;
+        font-family: var(--font-mono);
+        color: var(--text-dim);
       }
 
-      /* Responzivní přizpůsobení */
-      @media (max-width: 860px) {
+      /* Responzivní Breakpointy */
+      @media (max-width: 900px) {
         .hero-grid {
           grid-template-columns: 1fr;
           gap: 3rem;
-          padding: 1rem 0 3rem;
         }
-        .hero-poster {
+        .hero-visual-card {
           aspect-ratio: 16 / 10;
         }
-        .editorial-columns {
+        .split-section {
           grid-template-columns: 1fr;
-          gap: 3rem;
+          gap: 2rem;
         }
-        .magazine-grid {
+        .stats-strip {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+        .magazine-mosaic {
           grid-template-columns: 1fr;
         }
-        .col-12, .col-7, .col-5, .col-6 {
+        .span-12, .span-7, .span-5, .span-6 {
           grid-column: span 1;
           aspect-ratio: 16 / 10;
         }
-        .magazine-item figcaption {
+        .mosaic-info {
           opacity: 1;
         }
-        .series-row {
+        .series-entry {
           grid-template-columns: 2.5rem 1fr;
-          gap: 1rem;
+          gap: 1.25rem;
         }
-        .series-action {
+        .series-badge {
           grid-column: 2;
-          margin-top: 0.5rem;
+        }
+        .contact-banner {
+          padding: 2.5rem 1.75rem;
+        }
+        .dock-links {
+          display: none;
         }
       }
     </style>
   </head>
   <body>
+
+    <!-- Plovoucí navigační dok -->
+    <div class="nav-dock-wrapper">
+      <nav class="nav-dock">
+        <a href="#" class="dock-brand">Patrik Rybka</a>
+        <div class="dock-links">
+          <a href="#o-mne">O mně</a>
+          <a href="#vybava">Výbava</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#navody">Návody</a>
+          <a href="#kontakt">Kontakt</a>
+        </div>
+      </nav>
+    </div>
+
     <div class="container">
       
-      <!-- Navigace -->
-      <header>
-        <nav class="nav-bar">
-          <a href="#" class="nav-logo">Patrik Rybka</a>
-          <div class="nav-links">
-            <a href="#o-mne">O mně</a>
-            <a href="#vybava">Výbava</a>
-            <a href="#galerie">Galerie</a>
-            <a href="#navody">Návody</a>
-            <a href="#kontakt">Kontakt</a>
-          </div>
-        </nav>
-      </header>
-
-      <main>
-        <!-- Plakátová Asymetrická Hero sekce -->
-        <section class="hero-grid">
+      <!-- HERO SEKCE -->
+      <section class="hero-section">
+        <div class="hero-grid">
+          
           <div class="hero-text">
-            <span class="hero-kicker">IT & Visual Storyteller</span>
-            <h1>Patrik Rybka</h1>
-            <p class="hero-subtitle">
-              Propojení spolehlivé síťové infrastruktury a Linuxu s autentickou terénní reportáží.
-            </p>
+            <span class="hero-eyebrow">
+              IT Systems & Terénní Reportáž
+            </span>
+
+            <h1 class="hero-title">
+              Patrik<br />
+              <span class="outline">Rybka</span>
+            </h1>
+
             <p class="hero-desc">
-              Jsem student IT se zájmem o správu počítačových sítí, serverů a hardware. 
-              Mimo obrazovku monitoru trávím čas v plenéru s fotoaparátem Canon R10, 
-              kde dokumentuji energii letních akcí, táborů a festivalů. V obou světech sázím na věcné řešení a funkčnost.
+              Student IT se zaměřením na počítačové sítě, Linux a hardware. 
+              Paralelně působím v terénu s bezzrcadlovkou Canon R10, kde zachycuji autentickou atmosféru letních akcí, táborů a festivalů. V obou oborech sázím na přímé, funkční a spolehlivé řešení.
             </p>
 
             <div class="hero-actions">
-              <a href="#galerie" class="arrow-link">Prohlédnout galerii →</a>
-              <a href="#navody" class="arrow-link">Číst foto průvodce →</a>
+              <a href="#portfolio" class="btn-pill btn-white">
+                Prohlédnout práce ↓
+              </a>
+              <a href="#navody" class="btn-pill btn-ghost">
+                Číst foto seriál →
+              </a>
             </div>
           </div>
 
-          <!-- Vertikální obrazová kotva -->
-          <div class="hero-visual">
+          <!-- Hero plakátová kotva (připraveno na tvou fotku) -->
+          <div class="hero-visual-card">
             <img 
-              src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?auto=format&fit=crop&w=900&q=80" 
-              alt="Patrik Rybka – Vizuální tvorba v terénu" 
-              class="hero-poster"
+              src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?auto=format&fit=crop&w=1000&q=80" 
+              alt="Patrik Rybka – Foto & IT" 
               loading="eager"
             />
-            <div class="hero-poster-caption">
-              <span>Terénní reportáž & zázemí</span>
-              <span>Canon R10 · 2026</span>
+            <div class="hero-visual-badge">
+              <span><strong>PATRIK RYBKA</strong> • VIZUÁLNÍ TVORBA</span>
+              <span>CANON R10 · 2026</span>
             </div>
           </div>
-        </section>
 
-        <hr class="divider" />
+        </div>
+      </section>
 
-        <!-- O mně & Výbava (Editorial Layout) -->
-        <section id="o-mne">
-          <div class="section-header">
-            <h2>O mně & Výbava</h2>
-            <p class="section-sub">
-              Dva pilíře mých dovedností: čistá práce s technologiemi a praktická terénní fotografická technika.
+      <!-- METRIKY & PILÍŘE -->
+      <section class="stats-strip">
+        <div class="stat-item">
+          <span class="stat-num">Canon EOS R10</span>
+          <span class="stat-label">APS-C Dual Pixel AF · 4K video</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">RF 18–150 & 50mm</span>
+          <span class="stat-label">Reportážní zoom + portrétní f/1.8</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">Sítě & Linux</span>
+          <span class="stat-label">Routing, VLAN, Debian, Docker</span>
+        </div>
+      </section>
+
+      <!-- O MNĚ & VÝBAVA -->
+      <section id="o-mne">
+        <div class="section-heading-wrap">
+          <div>
+            <h2 class="section-title">O mně & Výbava</h2>
+            <p class="section-subtitle">
+              Dva směry, které spojuje stejný přístup: detailní znalost nástrojů a schopnost rychle vyřešit problém v terénu.
             </p>
           </div>
+        </div>
 
-          <div class="editorial-columns" id="vybava">
-            <!-- Systémy & Sítě -->
-            <div class="column">
-              <h3 class="column-title">Systémy & Sítě</h3>
-              <dl class="spec-group">
-                <div class="spec-item">
-                  <dt>Správa počítačových sítí</dt>
-                  <dd>Návrh a konfigurace LAN infrastruktur, směrování, přepínání, segmentace VLAN, správa DHCP/DNS a diagnostika provozu.</dd>
-                </div>
-                <div class="spec-item">
-                  <dt>Linux & Serverové prostředí</dt>
-                  <dd>Administrace systémů Debian a Ubuntu, skriptování v Bash, zabezpečení a spolehlivá vzdálená správa přes SSH.</dd>
-                </div>
-                <div class="spec-item">
-                  <dt>Virtualizace & Verzování</dt>
-                  <dd>Kontejnerizace služeb v Dockeru, virtualizační nástroje a verzování konfigurací v Gitu.</dd>
-                </div>
-                <div class="spec-item">
-                  <dt>Hardware & Údržba stanic</dt>
-                  <dd>Diagnostika, stavba a servis PC, zálohovací strategie a obnova dat v terénních podmínkách.</dd>
-                </div>
-              </dl>
+        <div class="split-section" id="vybava">
+          
+          <!-- Levý sloupec: IT -->
+          <div class="split-card">
+            <div>
+              <div class="card-tag">INFRASTRUKTURA & KÓD</div>
+              <h3 class="card-headline">Systémy & Sítě</h3>
+              <p class="card-copy">
+                Věnuji se návrhu a správě LAN infrastruktur, konfiguraci směrování, přepínání a segmentaci sítí přes VLAN. Běžně pracuji v linuxovém terminálu (Debian, Ubuntu), spravuji služby přes SSH a využívám kontejnerizaci v Dockeru. K tomu patří i hardware: diagnostika komponent a stavba spolehlivých PC sestav.
+              </p>
             </div>
-
-            <!-- Foto & Video kit -->
-            <div class="column">
-              <h3 class="column-title">Foto & Video kit</h3>
-              <dl class="spec-group">
-                <div class="spec-item">
-                  <dt>Canon EOS R10 (Tělo)</dt>
-                  <dd>Lehká a pohotová APS-C bezzrcadlovka s precizním Dual Pixel ostřením na oči a spolehlivým kontinuálním sledováním pohybu.</dd>
-                </div>
-                <div class="spec-item">
-                  <dt>Canon RF-S 18–150 mm IS STM (Univerzál)</dt>
-                  <dd>Klíčový reportážní objektiv pro akce a tábory. Zvládne širokoúhlý celek scény i vzdálený detail bez nutnosti měnit skla v prachu.</dd>
-                </div>
-                <div class="spec-item">
-                  <dt>Canon RF 50 mm f/1.8 STM (Světelný objektiv)</dt>
-                  <dd>Pevná padesátka pro portréty, detaily techniky a večerní záběry s měkkým přirozeným rozostřením pozadí.</dd>
-                </div>
-                <div class="spec-item">
-                  <dt>Příslušenství do terénu</dt>
-                  <dd>Směrový mikrofon s ochranou proti větru (deadcat), bi-color LED světla pro přisvícení a zásoba akumulátorů na celodenní provoz.</dd>
-                </div>
-              </dl>
+            
+            <div class="gear-tags">
+              <span class="gear-tag">TCP/IP & VLAN</span>
+              <span class="gear-tag">Linux / Bash</span>
+              <span class="gear-tag">Docker</span>
+              <span class="gear-tag">Git</span>
+              <span class="gear-tag">PC Hardware</span>
             </div>
           </div>
-        </section>
 
-        <hr class="divider" />
+          <!-- Pravý sloupec: Foto -->
+          <div class="split-card">
+            <div>
+              <div class="card-tag">TERÉNNÍ VÝBAVA</div>
+              <h3 class="card-headline">Foto & Video kit</h3>
+              <p class="card-copy">
+                Mým hlavním pracovním nástrojem je bezzrcadlovka <strong>Canon EOS R10</strong>. Pro reportáže v běhu nasazuji univerzální zoom <strong>RF-S 18–150 mm IS STM</strong>, který pokryje celou scénu bez nutnosti měnit objektiv v prachu. Na portréty a nízké světlo používám pevnou padesátku <strong>RF 50 mm f/1.8</strong>. Výbavu doplňuje směrový mikrofon s ochranou proti větru a bi-color LED světla.
+              </p>
+            </div>
 
-        <!-- Asymetrická Galerie (Magazine Layout) -->
-        <section id="galerie">
-          <div class="section-header">
-            <h2>Vybrané fotografie</h2>
-            <p class="section-sub">
-              Ukázky z reportáží a akcí v terénu. Žádné aranžované pózy, ale zachycení autentické atmosféry a práce s přirozeným světlem.
+            <div class="gear-tags">
+              <span class="gear-tag">Canon EOS R10</span>
+              <span class="gear-tag">RF-S 18–150 mm</span>
+              <span class="gear-tag">RF 50 mm f/1.8</span>
+              <span class="gear-tag">Shotgun Mic + Deadcat</span>
+              <span class="gear-tag">Bi-Color LED</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- FOTOGRAFICKÉ PORTFOLIO -->
+      <section id="portfolio" class="gallery-container">
+        <div class="section-heading-wrap">
+          <div>
+            <h2 class="section-title">Vybrané fotografie</h2>
+            <p class="section-subtitle">
+              Autentické momenty z akcí, práce s přirozeným světlem a živá reportáž.
             </p>
           </div>
+        </div>
 
-          <div class="magazine-grid">
-            <!-- 1. Velká širokoúhlá dominantní fotografie -->
-            <figure class="magazine-item col-12">
-              <img 
-                src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1400&q=80" 
-                alt="Reportáž z letní akce" 
-                loading="lazy"
-              />
-              <figcaption>
-                <div class="caption-text">
-                  <strong>Reportáž z letní akce</strong>
-                  <span>Týmová dynamika v terénu</span>
-                </div>
-                <span class="caption-tech">18–150 mm · 1/500s · f/4.5</span>
-              </figcaption>
-            </figure>
-
-            <!-- 2. Vertikální portrétní snímek -->
-            <figure class="magazine-item col-5">
-              <img 
-                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" 
-                alt="Portrét na pevnou padesátku" 
-                loading="lazy"
-              />
-              <figcaption>
-                <div class="caption-text">
-                  <strong>Portrét na pevnou padesátku</strong>
-                  <span>Práce s přirozeným světlem</span>
-                </div>
-                <span class="caption-tech">RF 50 mm · f/1.8</span>
-              </figcaption>
-            </figure>
-
-            <!-- 3. Krajinný / atmosférický záběr -->
-            <figure class="magazine-item col-7">
-              <img 
-                src="https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=1000&q=80" 
-                alt="Večerní atmosféra u ohně" 
-                loading="lazy"
-              />
-              <figcaption>
-                <div class="caption-text">
-                  <strong>Večerní atmosféra u ohně</strong>
-                  <span>Focení za šera bez blesku</span>
-                </div>
-                <span class="caption-tech">RF 50 mm · ISO 3200</span>
-              </figcaption>
-            </figure>
-
-            <!-- 4. Moment v pohybu -->
-            <figure class="magazine-item col-6">
-              <img 
-                src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=900&q=80" 
-                alt="Moment v pohybu" 
-                loading="lazy"
-              />
-              <figcaption>
-                <div class="caption-text">
-                  <strong>Moment v pohybu</strong>
-                  <span>Krátký čas pro zmrazení akce</span>
-                </div>
-                <span class="caption-tech">18–150 mm · 1/1000s</span>
-              </figcaption>
-            </figure>
-
-            <!-- 5. Detail techniky -->
-            <figure class="magazine-item col-6">
-              <img 
-                src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=900&q=80" 
-                alt="Detail techniky v akci" 
-                loading="lazy"
-              />
-              <figcaption>
-                <div class="caption-text">
-                  <strong>Detail techniky v akci</strong>
-                  <span>Soustředění na mechaniku</span>
-                </div>
-                <span class="caption-tech">RF 50 mm · f/2.2</span>
-              </figcaption>
-            </figure>
+        <div class="magazine-mosaic">
+          
+          <!-- 1. Velká širokoúhlá dominanta -->
+          <div class="mosaic-item span-12">
+            <img 
+              src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1500&q=80" 
+              alt="Reportáž z letní akce" 
+              loading="lazy"
+            />
+            <div class="mosaic-info">
+              <h4>Reportáž z letní akce</h4>
+              <p>Týmová energie a dění v plenéru</p>
+              <span class="mosaic-exif">18–150 mm · 1/500s · f/4.5</span>
+            </div>
           </div>
-        </section>
 
-        <hr class="divider" />
+          <!-- 2. Vertikální portrét -->
+          <div class="mosaic-item span-5">
+            <img 
+              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" 
+              alt="Portrét na pevnou padesátku" 
+              loading="lazy"
+            />
+            <div class="mosaic-info">
+              <h4>Portrét na pevnou padesátku</h4>
+              <p>Přirozené světlo a nízká hloubka ostrosti</p>
+              <span class="mosaic-exif">RF 50 mm · f/1.8</span>
+            </div>
+          </div>
 
-        <!-- Seriál / Návody (Zápisky) -->
-        <section id="navody">
-          <div class="section-header">
-            <h2>Návody & Seriál o praktické fotografii</h2>
-            <p class="section-sub">
-              Ucelený průvodce praktickým focením a tvorbou reportáží bez zbytečného vyhazování peněz za drahou výbavu. 
-              Zkušenosti přímo z praxe na akcích.
+          <!-- 3. Širokoúhlejší záběr -->
+          <div class="mosaic-item span-7">
+            <img 
+              src="https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=1000&q=80" 
+              alt="Večerní atmosféra u ohně" 
+              loading="lazy"
+            />
+            <div class="mosaic-info">
+              <h4>Večerní atmosféra u ohně</h4>
+              <p>Focení za šera bez umělého blesku</p>
+              <span class="mosaic-exif">RF 50 mm · ISO 3200</span>
+            </div>
+          </div>
+
+          <!-- 4. Moment v pohybu -->
+          <div class="mosaic-item span-6">
+            <img 
+              src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=900&q=80" 
+              alt="Moment v pohybu" 
+              loading="lazy"
+            />
+            <div class="mosaic-info">
+              <h4>Moment v pohybu</h4>
+              <p>Pohotová reakce a krátký čas závěrky</p>
+              <span class="mosaic-exif">18–150 mm · 1/1000s</span>
+            </div>
+          </div>
+
+          <!-- 5. Detail techniky -->
+          <div class="mosaic-item span-6">
+            <img 
+              src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=900&q=80" 
+              alt="Detail techniky v akci" 
+              loading="lazy"
+            />
+            <div class="mosaic-info">
+              <h4>Detail techniky v akci</h4>
+              <p>Práce s tělem a optikou v terénu</p>
+              <span class="mosaic-exif">RF 50 mm · f/2.2</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SERIÁL & NÁVODY -->
+      <section id="navody" class="series-section">
+        <div class="section-heading-wrap">
+          <div>
+            <h2 class="section-title">Foto seriál & Zápisky</h2>
+            <p class="section-subtitle">
+              Praktický průvodce focením a videotvorbou na akcích bez vyhazování peněz za předraženou výbavu.
             </p>
           </div>
+        </div>
 
-          <div class="series-list">
-            <article class="series-row">
-              <span class="series-num">01</span>
-              <div class="series-content">
-                <h3>
-                  <a href="/blog/proc-jsem-si-vytvoril-vlastni-web">Výběr první bezzrcadlovky a skel bez vyhazování peněz</a>
-                </h3>
-                <p>
-                  Univerzální zoom 18–150 mm vs. světelná padesátka f/1.8. Kdy které sklo nasadit a proč není nutné začínat s výbavou za sto tisíc.
-                </p>
-              </div>
-              <div class="series-action">
-                <a href="/blog/proc-jsem-si-vytvoril-vlastni-web">Číst článek →</a>
-              </div>
-            </article>
+        <div class="series-stack">
+          
+          <a href="/blog/proc-jsem-si-vytvoril-vlastni-web" class="series-entry">
+            <span class="series-number">01</span>
+            <div>
+              <h3 class="series-title">Výběr první bezzrcadlovky a skel bez vyhazování peněz</h3>
+              <p class="series-text">
+                Univerzální zoom 18–150 mm vs. světelná padesátka f/1.8. Kdy které sklo nasadit a proč není nutné začínat s výbavou za sto tisíc.
+              </p>
+            </div>
+            <div class="series-badge">Číst článek →</div>
+          </a>
 
-            <article class="series-row">
-              <span class="series-num">02</span>
-              <div class="series-content">
-                <h3>Zkrocení expozičního času při reportáži v pohybu</h3>
-                <p>
-                  Reportáž na akcích a táborech bez neostrých fotek. Jak nastavit bezpečný čas závěrky, clonu a Auto ISO pro nepředvídatelné situace v terénu.
-                </p>
-              </div>
-              <div class="series-action">
-                [ Připravuje se ]
-              </div>
-            </article>
-
-            <article class="series-row">
-              <span class="series-num">03</span>
-              <div class="series-content">
-                <h3>Video a čistý zvuk v terénu bez drahých gimbalů</h3>
-                <p>
-                  Nastavení Canonu R10 pro stabilní video z ruky. Výběr směrového mikrofonu, řešení větru v plenéru a organizace materiálu na kartách.
-                </p>
-              </div>
-              <div class="series-action">
-                [ Připravuje se ]
-              </div>
-            </article>
+          <div class="series-entry" style="cursor: default;">
+            <span class="series-number">02</span>
+            <div>
+              <h3 class="series-title">Zkrocení expozičního času při reportáži v pohybu</h3>
+              <p class="series-text">
+                Reportáž na akcích a táborech bez neostrých fotek. Jak nastavit bezpečný čas závěrky, clonu a Auto ISO pro nepředvídatelné situace v terénu.
+              </p>
+            </div>
+            <div class="series-badge" style="color: var(--text-dim);">[ Připravuje se ]</div>
           </div>
-        </section>
 
-        <hr class="divider" />
+          <div class="series-entry" style="cursor: default;">
+            <span class="series-number">03</span>
+            <div>
+              <h3 class="series-title">Video a čistý zvuk v terénu bez drahých gimbalů</h3>
+              <p class="series-text">
+                Nastavení Canonu R10 pro video z ruky. Výběr směrového mikrofonu, řešení větru v plenéru a organizace materiálu na kartách.
+              </p>
+            </div>
+            <div class="series-badge" style="color: var(--text-dim);">[ Připravuje se ]</div>
+          </div>
 
-        <!-- Kontakt -->
-        <section id="kontakt" class="contact-block">
-          <h2>Kontakt</h2>
-          <p class="contact-lead">Pojďme se spojit</p>
-          <p class="contact-text">
-            Hledáte spolehlivého fotografa pro vaši akci, tábor či reportáž, nebo chcete probrat síťovou infrastrukturu a Linux? Napište mi.
+        </div>
+      </section>
+
+      <!-- KONTAKT -->
+      <section id="kontakt" class="contact-banner">
+        <div class="contact-lead-text">
+          <h2>Pojďme spolupracovat</h2>
+          <p>
+            Hledáte fotografa pro vaši akci, tábor či reportáž, nebo chcete probrat síťovou infrastrukturu a Linux? Napište mi.
           </p>
+        </div>
 
-          <div class="contact-links">
-            <a href="mailto:kontakt@patrikrybka.me">kontakt@patrikrybka.me ↗</a>
-            <a href="https://github.com/Patrik-Rybka" target="_blank" rel="noopener noreferrer">github.com/Patrik-Rybka ↗</a>
-          </div>
-        </section>
-      </main>
+        <div class="contact-cta-group">
+          <a href="mailto:kontakt@patrikrybka.me" class="btn-pill btn-white">
+            kontakt@patrikrybka.me ↗
+          </a>
+          <a href="https://github.com/Patrik-Rybka" target="_blank" rel="noopener noreferrer" class="btn-pill btn-ghost">
+            GitHub profil ↗
+          </a>
+        </div>
+      </section>
 
-      <!-- Patička -->
+      <!-- PATIČKA -->
       <footer>
         <div>© 2026 Patrik Rybka</div>
         <div>patrikrybka.me</div>
