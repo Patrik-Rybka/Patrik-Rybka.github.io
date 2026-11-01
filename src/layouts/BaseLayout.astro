@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
 
 interface Props {
   title?: string;
@@ -10,6 +12,8 @@ const {
   title = "Patrik Rybka | IT Student & Developer",
   description = "Osobní portfolio a blog Patrika Rybky. Zápisky o programování, technologiích a projektech."
 } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://patrikrybka.me');
 ---
 
 <!doctype html>
@@ -19,16 +23,25 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={description} />
+
+    <!-- SEO Meta Tagy -->
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph pro hezké náhledy na sociálních sítích a Discordu -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:type" content="website" />
   </head>
   <body class="bg-neutral-950 text-neutral-100 antialiased min-h-screen flex flex-col selection:bg-indigo-500 selection:text-white">
-    <slot name="header" />
+    <Navbar />
     
-    <main class="flex-grow w-full max-w-4xl mx-auto px-4 sm:px-6 py-8">
+    <main class="flex-grow w-full max-w-4xl mx-auto px-4 sm:px-6 py-10">
       <slot />
     </main>
 
-    <slot name="footer" />
+    <Footer />
   </body>
 </html>
