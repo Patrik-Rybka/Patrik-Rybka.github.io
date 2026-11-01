@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@astrojs/react';
 import keystatic from '@keystatic/astro';
 
-// Při produkčním sestavení pro GitHub Pages vynecháme SSR admin routy,
+// Při produkčním sestavení pro čistě statické GitHub Pages vynecháme SSR admin routy,
 // v dev režimu (lokálně na počítači) je Keystatic plně aktivní.
 const isBuild = process.argv.includes('build');
 
