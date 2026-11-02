@@ -24,7 +24,7 @@ export default config({
           label: 'Úvodní text (Bio)',
           multiline: true,
           defaultValue:
-            'Student 3. ročníku IT na Úžlabině se zaměřením na sítě a hardware. Doma stavím virtuální laby, připravuju se na maturitu z kyberbezpečnosti a směřuju na techniku (FIT ČVUT / VUT). Mimo terminál beru do ruky Canon R10 a fotím reportáže z akcí a táborů.',
+            'Jsem ve třetím ročníku na IT gymnáziu V Úžlabině, baví mě sítě, hardware a po škole chci pokračovat na FIT ČVUT nebo VUT. Doma si ve VirtualBoxu zkouším síťové konfigurace a Linux, abych to uměl v praxi. Když nejsem u PC, jdu ven s foťákem a fotím různé momentky, situace na akcích a dětských táborech.',
         }),
         aboutSystemsHeadline: fields.text({
           label: 'IT sekce - Nadpis',
@@ -34,7 +34,7 @@ export default config({
           label: 'IT sekce - Text',
           multiline: true,
           defaultValue:
-            'Baví mě hardware, bastlení a rozebírání věcí na součástky, abych pochopil, jak fungují uvnitř. Můj hlavní směr jsou počítačové sítě a kyberbezpečnost, ze kterých příští rok maturuji. Na domácí stanici simuluji síťová prostředí a testuji systémy ve VirtualBoxu. Při kódování a vývoji beru moderní nástroje jako samozřejmost, ale stavím na tom, abych do hloubky rozuměl logice kódu a architektuře celého řešení.',
+            'Rád se vrtám v hardwaru a zkouším, jak věci reálně fungují uvnitř. Ze sítí a kyberbezpečnosti budu příští rok maturovat, takže si doma na virtuálkách stavím vlastní sítě a hraju si s Linuxem. U programování chci chápat, jak věci drží pohromadě, a nestavět jen naslepo.',
         }),
         aboutGearHeadline: fields.text({
           label: 'Foto sekce - Nadpis',
@@ -44,17 +44,17 @@ export default config({
           label: 'Foto sekce - Text',
           multiline: true,
           defaultValue:
-            'Na akce a reportáže tahám bezzrcadlovku Canon R10. V terénu spoléhám na univerzální 18–150 mm, abych nemusel v prachu měnit skla, a na portréty nasazuji pevnou padesátku f/1.8. Výbavu doplňuji o CPL, ND a difuzní filtry. Video stříhám v DaVinci Resolve, fotky barevně ladím v Lightroomu a Photoshopu.',
+            'Fotím na bezzrcadlovku Canon R10. Na rychlé momentky z akcí tahám objektiv 18–150 mm, na lidi a portréty nasazuju pevnou padesátku. K tomu používám pár filtrů na ostré slunce a odlesky. Fotky třídím a ladím v Lightroomu, video stříhám v DaVinci.',
         }),
         careerHeadline: fields.text({
           label: 'Kariérní sekce - Nadpis',
-          defaultValue: 'Hledám uplatnění & Spolupráci',
+          defaultValue: 'Co mohu nabídnout & co hledám',
         }),
         careerCopy: fields.text({
           label: 'Kariérní sekce - Text',
           multiline: true,
           defaultValue:
-            'Otevřen brigádám a juniorským pozicím v IT (správa sítí, L1/L2 technická podpora, správa systémů, hardware servis) i zakázkám na reportážní focení a videotvorbu z akcí a táborů.',
+            'Hledám brigádu v IT – rád pomůžu se správou počítačů, zapojováním a nastavováním sítě nebo jako technická výpomoc v kanclu a servisu. A pokud pořádáte tábor nebo akci, rád přijedu nafotit celou akci.',
         }),
         contactHeadline: fields.text({
           label: 'Kontakt - Nadpis',
@@ -64,7 +64,7 @@ export default config({
           label: 'Kontakt - Text',
           multiline: true,
           defaultValue:
-            'Hledáte posilu do IT týmu, nebo potřebujete spolehlivě nafotit vaši akci? Napište mi.',
+            'Hledáte posilu do IT týmu nebo technickou výpomoc, případně chcete nafotit akci či tábor? Napište mi.',
         }),
         contactEmail: fields.text({
           label: 'Kontaktní E-mail',
