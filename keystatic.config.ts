@@ -13,8 +13,8 @@ export default config({
       path: 'src/content/homepage/index',
       schema: {
         heroEyebrow: fields.text({
-          label: 'Horní štítek (např. IT Systems & Terénní Reportáž)',
-          defaultValue: 'IT Systems & Terénní Reportáž',
+          label: 'Horní štítek (např. Úžlabina • FIT ČVUT / VUT)',
+          defaultValue: 'Úžlabina • FIT ČVUT / VUT',
         }),
         heroTitle: fields.text({
           label: 'Hlavní nadpis (Jméno)',
@@ -24,38 +24,39 @@ export default config({
           label: 'Úvodní text (Bio)',
           multiline: true,
           defaultValue:
-            'Student IT se zaměřením na počítačové sítě, Linux a hardware. Paralelně působím v terénu s bezzrcadlovkou Canon R10, kde zachycuji autentickou atmosféru letních akcí, táborů a festivalů. V obou oborech sázím na přímé, funkční a spolehlivé řešení.',
+            'Jsem ve třeťáku na Úžlabině na IT gymplu a chci pokračovat na FIT ČVUT nebo VUT na sítě a servery. Baví mě si železo sám poskládat a rozchodit. Když nesedím u kompu, beru foťák a fotím na táborech a akcích.',
         }),
         aboutSystemsHeadline: fields.text({
           label: 'IT sekce - Nadpis',
-          defaultValue: 'Systémy & Sítě',
+          defaultValue: 'IT, sítě a kód',
         }),
         aboutSystemsCopy: fields.text({
           label: 'IT sekce - Text',
           multiline: true,
           defaultValue:
-            'Věnuji se návrhu a správě LAN infrastruktur, konfiguraci směrování, přepínání a segmentaci sítí přes VLAN. Běžně pracuji v linuxovém terminálu (Debian, Ubuntu), spravuji služby přes SSH a využívám kontejnerizaci v Dockeru. K tomu patří i hardware: diagnostika komponent a stavba spolehlivých PC sestav.',
+            'Doma si stavím a zprovozňuju hardware, projekty testuju ve VirtualBoxu. Kód nepíšu ručně od nuly – jedu vibe coding přes AI a držím si to na GitHubu. K tomu řeším sítě, směrování a kyberbezpečnost, ze které budu i maturovat. Běžím na Legionu s i7 a RTX 4060.',
         }),
         aboutSystemsTags: fields.array(fields.text({ label: 'Technologie' }), {
           label: 'IT Technologie (Tagy)',
           itemLabel: (props) => props.value || 'Nová technologie',
           defaultValue: [
-            'TCP/IP & VLAN',
-            'Linux / Bash',
-            'Docker',
-            'Git',
-            'PC Hardware',
+            'VirtualBox',
+            'Vibe coding (AI)',
+            'GitHub',
+            'Sítě & Směrování',
+            'Kyberbezpečnost',
+            'Legion RTX 4060',
           ],
         }),
         aboutGearHeadline: fields.text({
           label: 'Foto sekce - Nadpis',
-          defaultValue: 'Foto & Video kit',
+          defaultValue: 'Foto výbava',
         }),
         aboutGearCopy: fields.text({
           label: 'Foto sekce - Text',
           multiline: true,
           defaultValue:
-            'Mým hlavním pracovním nástrojem je bezzrcadlovka Canon EOS R10. Pro reportáže v běhu nasazuji univerzální zoom RF-S 18–150 mm IS STM, který pokryje celou scénu bez nutnosti měnit objektiv v prachu. Na portréty a nízké světlo používám pevnou padesátku RF 50 mm f/1.8. Výbavu doplňuje směrový mikrofon s ochranou proti větru a bi-color LED světla.',
+            'Na akce a tábory tahám Canon R10. Většinu času mám nasazený 18–150 mm, abych nemusel měnit skla v prachu, a na portréty přehazuju pevnou padesátku f/1.8. Na objektivy točím CPL, NDčka a difuzní filtr. Střihám v DaVinci, fotky ladím v Lightroomu a Photoshopu.',
         }),
         aboutGearTags: fields.array(fields.text({ label: 'Vybavení' }), {
           label: 'Foto Vybavení (Tagy)',
@@ -64,27 +65,36 @@ export default config({
             'Canon EOS R10',
             'RF-S 18–150 mm',
             'RF 50 mm f/1.8',
-            'Shotgun Mic + Deadcat',
-            'Bi-Color LED',
+            'CPL / ND / Difuzní filtry',
+            'DaVinci Resolve',
+            'Lightroom & Photoshop',
           ],
         }),
         contactHeadline: fields.text({
           label: 'Kontakt - Nadpis',
-          defaultValue: 'Pojďme spolupracovat',
+          defaultValue: 'Kontakt',
         }),
         contactCopy: fields.text({
           label: 'Kontakt - Text',
           multiline: true,
           defaultValue:
-            'Hledáte fotografa pro vaši akci, tábor či reportáž, nebo chcete probrat síťovou infrastrukturu a Linux? Napište mi.',
+            'Chceš nafotit tábor nebo akci, pokecat o hardwaru nebo sítích? Napiš mi.',
         }),
         contactEmail: fields.text({
           label: 'Kontaktní E-mail',
-          defaultValue: 'kontakt@patrikrybka.me',
+          defaultValue: 'patrikrybka2008@gmail.com',
         }),
         contactGithub: fields.text({
           label: 'GitHub URL',
           defaultValue: 'https://github.com/Patrik-Rybka',
+        }),
+        contactInstagram: fields.text({
+          label: 'Instagram URL',
+          defaultValue: 'https://instagram.com/',
+        }),
+        contactLinkedin: fields.text({
+          label: 'LinkedIn URL',
+          defaultValue: 'https://linkedin.com/',
         }),
       },
     }),

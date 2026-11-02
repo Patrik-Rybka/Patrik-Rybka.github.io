@@ -11,12 +11,12 @@ import homepageData from '../content/homepage/index.json';
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
-    <title>Patrik Rybka — IT & Visual Portfolio</title>
-    <meta name="description" content="Osobní portfolio Patrika Rybky. Správa sítí, Linux a autentická foto a video reportáž v terénu." />
+    <title>Patrik Rybka — IT, sítě & foto z táborů</title>
+    <meta name="description" content="Student IT na Úžlabině se zaměřením na sítě, servery a hardware. Terénní foto a videotvorba s Canonem R10 na táborech a akcích." />
     <link rel="canonical" href="https://patrikrybka.me" />
 
-    <meta property="og:title" content="Patrik Rybka — IT & Visual Portfolio" />
-    <meta property="og:description" content="Osobní portfolio Patrika Rybky. Správa sítí, Linux a autentická foto a video reportáž v terénu." />
+    <meta property="og:title" content="Patrik Rybka — IT, sítě & foto z táborů" />
+    <meta property="og:description" content="Student IT na Úžlabině se zaměřením na sítě, servery a hardware. Terénní foto a videotvorba s Canonem R10 na táborech a akcích." />
     <meta property="og:url" content="https://patrikrybka.me" />
     <meta property="og:type" content="website" />
 
@@ -150,7 +150,7 @@ import homepageData from '../content/homepage/index.json';
 
       .dock-links {
         display: flex;
-        gap: 0.5rem;
+        gap: 0.35rem;
         font-size: 0.85rem;
         font-weight: 500;
       }
@@ -221,7 +221,7 @@ import homepageData from '../content/homepage/index.json';
         font-size: 1.125rem;
         color: var(--text-muted);
         line-height: 1.65;
-        max-width: 520px;
+        max-width: 530px;
         margin-bottom: 2.25rem;
       }
 
@@ -364,7 +364,7 @@ import homepageData from '../content/homepage/index.json';
       }
 
       .stat-num {
-        font-size: 1.75rem;
+        font-size: 1.6rem;
         font-weight: 800;
         letter-spacing: -0.03em;
         color: #ffffff;
@@ -401,11 +401,11 @@ import homepageData from '../content/homepage/index.json';
       .section-subtitle {
         font-size: 0.95rem;
         color: var(--text-muted);
-        max-width: 480px;
+        max-width: 520px;
         line-height: 1.6;
       }
 
-      /* --- O MNĚ & VÝBAVA (Kreativní Split) --- */
+      /* --- O MNĚ & TECHNIKA (Kreativní Split) --- */
       .split-section {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -572,7 +572,7 @@ import homepageData from '../content/homepage/index.json';
       .span-5  { grid-column: span 5; aspect-ratio: 4 / 5; }
       .span-6  { grid-column: span 6; aspect-ratio: 16 / 10; }
 
-      /* --- NÁVODY & SERIÁL (Editorial List) --- */
+      /* --- NÁVODY & ZÁPISKY (Editorial List) --- */
       .series-section {
         margin-bottom: 7rem;
       }
@@ -685,7 +685,7 @@ import homepageData from '../content/homepage/index.json';
 
       .contact-cta-group {
         display: flex;
-        gap: 1rem;
+        gap: 0.85rem;
         flex-wrap: wrap;
       }
 
@@ -756,8 +756,8 @@ import homepageData from '../content/homepage/index.json';
         <div class="dock-links">
           <a href="#o-mne">O mně</a>
           <a href="#vybava">Výbava</a>
-          <a href="#portfolio">Portfolio</a>
-          <a href="#navody">Návody</a>
+          <a href="#fotky">Fotky</a>
+          <a href="#zapisky">Zápisky</a>
           <a href="#kontakt">Kontakt</a>
         </div>
       </nav>
@@ -784,11 +784,11 @@ import homepageData from '../content/homepage/index.json';
             </p>
 
             <div class="hero-actions">
-              <a href="#portfolio" class="btn-pill btn-white">
-                Prohlédnout práce ↓
+              <a href="#fotky" class="btn-pill btn-white">
+                Prohlédnout fotky ↓
               </a>
-              <a href="#navody" class="btn-pill btn-ghost">
-                Číst foto seriál →
+              <a href="#zapisky" class="btn-pill btn-ghost">
+                Číst zápisky →
               </a>
             </div>
           </div>
@@ -801,7 +801,7 @@ import homepageData from '../content/homepage/index.json';
               loading="eager"
             />
             <div class="hero-visual-badge">
-              <span><strong>PATRIK RYBKA</strong> • VIZUÁLNÍ TVORBA</span>
+              <span><strong>PATRIK RYBKA</strong> • TÁBORY & AKCE</span>
               <span>CANON R10 · 2026</span>
             </div>
           </div>
@@ -812,26 +812,26 @@ import homepageData from '../content/homepage/index.json';
       <!-- METRIKY & PILÍŘE -->
       <section class="stats-strip">
         <div class="stat-item">
+          <span class="stat-num">Úžlabina → FIT</span>
+          <span class="stat-label">Sítě, servery & kyberbezpečnost</span>
+        </div>
+        <div class="stat-item">
           <span class="stat-num">Canon EOS R10</span>
-          <span class="stat-label">APS-C Dual Pixel AF · 4K video</span>
+          <span class="stat-label">18–150 mm univerzál + 50 mm f/1.8</span>
         </div>
         <div class="stat-item">
-          <span class="stat-num">RF 18–150 & 50mm</span>
-          <span class="stat-label">Reportážní zoom + portrétní f/1.8</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-num">Sítě & Linux</span>
-          <span class="stat-label">Routing, VLAN, Debian, Docker</span>
+          <span class="stat-num">Lenovo Legion</span>
+          <span class="stat-label">Intel i7 · RTX 4060 · VirtualBox</span>
         </div>
       </section>
 
-      <!-- O MNĚ & VÝBAVA -->
+      <!-- O MNĚ & TECHNIKA -->
       <section id="o-mne">
         <div class="section-heading-wrap">
           <div>
-            <h2 class="section-title">O mně & Výbava</h2>
+            <h2 class="section-title">O mně & Technika</h2>
             <p class="section-subtitle">
-              Dva směry, které spojuje stejný přístup: detailní znalost nástrojů a schopnost rychle vyřešit problém v terénu.
+              Stavba hardwaru, sítě a focení v terénu bez zbytečného teoretizování.
             </p>
           </div>
         </div>
@@ -841,7 +841,7 @@ import homepageData from '../content/homepage/index.json';
           <!-- Levý sloupec: IT -->
           <div class="split-card">
             <div>
-              <div class="card-tag">INFRASTRUKTURA & KÓD</div>
+              <div class="card-tag">HARDWARE & SÍTĚ</div>
               <h3 class="card-headline">{homepageData.aboutSystemsHeadline}</h3>
               <p class="card-copy">
                 {homepageData.aboutSystemsCopy}
@@ -858,7 +858,7 @@ import homepageData from '../content/homepage/index.json';
           <!-- Pravý sloupec: Foto -->
           <div class="split-card">
             <div>
-              <div class="card-tag">TERÉNNÍ VÝBAVA</div>
+              <div class="card-tag">FOTO VÝBAVA</div>
               <h3 class="card-headline">{homepageData.aboutGearHeadline}</h3>
               <p class="card-copy">
                 {homepageData.aboutGearCopy}
@@ -876,12 +876,12 @@ import homepageData from '../content/homepage/index.json';
       </section>
 
       <!-- FOTOGRAFICKÉ PORTFOLIO -->
-      <section id="portfolio" class="gallery-container">
+      <section id="fotky" class="gallery-container">
         <div class="section-heading-wrap">
           <div>
-            <h2 class="section-title">Vybrané fotografie</h2>
+            <h2 class="section-title">Fotky</h2>
             <p class="section-subtitle">
-              Autentické momenty z akcí, práce s přirozeným světlem a živá reportáž.
+              Momentky z táborů, sport v běhu a věci, co fotím pro radost na Instagram.
             </p>
           </div>
         </div>
@@ -892,12 +892,12 @@ import homepageData from '../content/homepage/index.json';
           <div class="mosaic-item span-12">
             <img 
               src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1500&q=80" 
-              alt="Reportáž z letní akce" 
+              alt="Momentka z tábora" 
               loading="lazy"
             />
             <div class="mosaic-info">
-              <h4>Reportáž z letní akce</h4>
-              <p>Týmová energie a dění v plenéru</p>
+              <h4>Momentka z tábora</h4>
+              <p>Týmová energie, dění a atmosféra v plenéru</p>
               <span class="mosaic-exif">18–150 mm · 1/500s · f/4.5</span>
             </div>
           </div>
@@ -912,7 +912,7 @@ import homepageData from '../content/homepage/index.json';
             />
             <div class="mosaic-info">
               <h4>Patrik v terénu</h4>
-              <p>Pohotová reportáž a práce s tělem v plenéru</p>
+              <p>S bezzrcadlovkou Canon R10 na výjezdu</p>
               <span class="mosaic-exif">Canon EOS R10 · 18–150 mm</span>
             </div>
           </div>
@@ -921,13 +921,13 @@ import homepageData from '../content/homepage/index.json';
           <div class="mosaic-item span-7">
             <img 
               src="https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=1000&q=80" 
-              alt="Večerní atmosféra u ohně" 
+              alt="Večerní atmosféra u táboráku" 
               loading="lazy"
             />
             <div class="mosaic-info">
-              <h4>Večerní atmosféra u ohně</h4>
+              <h4>Večerní atmosféra u táboráku</h4>
               <p>Focení za šera bez umělého blesku</p>
-              <span class="mosaic-exif">RF 50 mm · ISO 3200</span>
+              <span class="mosaic-exif">RF 50 mm · f/1.8 · ISO 3200</span>
             </div>
           </div>
 
@@ -935,26 +935,26 @@ import homepageData from '../content/homepage/index.json';
           <div class="mosaic-item span-6">
             <img 
               src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=900&q=80" 
-              alt="Moment v pohybu" 
+              alt="Sport v běhu" 
               loading="lazy"
             />
             <div class="mosaic-info">
-              <h4>Moment v pohybu</h4>
+              <h4>Sport v běhu</h4>
               <p>Pohotová reakce a krátký čas závěrky</p>
               <span class="mosaic-exif">18–150 mm · 1/1000s</span>
             </div>
           </div>
 
-          <!-- 5. Detail techniky -->
+          <!-- 5. Detail techniky / Filtry -->
           <div class="mosaic-item span-6">
             <img 
               src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=900&q=80" 
-              alt="Detail techniky v akci" 
+              alt="Práce se světlem a filtry" 
               loading="lazy"
             />
             <div class="mosaic-info">
-              <h4>Detail techniky v akci</h4>
-              <p>Práce s tělem a optikou v terénu</p>
+              <h4>Práce se světlem a filtry</h4>
+              <p>CPL, ND a difuzní filtr na bezzrcadlovce</p>
               <span class="mosaic-exif">RF 50 mm · f/2.2</span>
             </div>
           </div>
@@ -962,36 +962,36 @@ import homepageData from '../content/homepage/index.json';
         </div>
       </section>
 
-      <!-- SERIÁL & NÁVODY -->
-      <section id="navody" class="series-section">
+      <!-- SERIÁL & ZÁPISKY -->
+      <section id="zapisky" class="series-section">
         <div class="section-heading-wrap">
           <div>
-            <h2 class="section-title">Foto seriál & Zápisky</h2>
+            <h2 class="section-title">Zápisky</h2>
             <p class="section-subtitle">
-              Praktický průvodce focením a videotvorbou na akcích bez vyhazování peněz za předraženou výbavu.
+              Praktické poznámky k technice, nastavení bezzrcadlovky a focení v pohybu.
             </p>
           </div>
         </div>
 
         <div class="series-stack">
           
-          <a href="/blog/proc-jsem-si-vytvoril-vlastni-web" class="series-entry">
+          <div class="series-entry" style="cursor: pointer;">
             <span class="series-number">01</span>
             <div>
-              <h3 class="series-title">Výběr první bezzrcadlovky a skel bez vyhazování peněz</h3>
+              <h3 class="series-title">Jak nastavit Canon R10 na sport a pohyb, aby nebyly fotky máznuté</h3>
               <p class="series-text">
-                Univerzální zoom 18–150 mm vs. světelná padesátka f/1.8. Kdy které sklo nasadit a proč není nutné začínat s výbavou za sto tisíc.
+                Bezpečné časy závěrky, tracking objektů a jak nastavit Auto ISO na akcích plných rychlého pohybu.
               </p>
             </div>
-            <div class="series-badge">Číst článek →</div>
-          </a>
+            <div class="series-badge">Připravuje se →</div>
+          </div>
 
           <div class="series-entry" style="cursor: default;">
             <span class="series-number">02</span>
             <div>
-              <h3 class="series-title">Zkrocení expozičního času při reportáži v pohybu</h3>
+              <h3 class="series-title">Proč mi na tábory stačí 18–150 mm a pevná 50 mm</h3>
               <p class="series-text">
-                Reportáž na akcích a táborech bez neostrých fotek. Jak nastavit bezpečný čas závěrky, clonu a Auto ISO pro nepředvídatelné situace v terénu.
+                Univerzální rozsah pro rychlou reportáž bez výměny skel v prachu a světelná padesátka na večer a portréty.
               </p>
             </div>
             <div class="series-badge" style="color: var(--text-dim);">[ Připravuje se ]</div>
@@ -1000,9 +1000,9 @@ import homepageData from '../content/homepage/index.json';
           <div class="series-entry" style="cursor: default;">
             <span class="series-number">03</span>
             <div>
-              <h3 class="series-title">Video a čistý zvuk v terénu bez drahých gimbalů</h3>
+              <h3 class="series-title">Filtry v praxi: polarizák, ND a difuzní filtr na malé bezzrcadlovce</h3>
               <p class="series-text">
-                Nastavení Canonu R10 pro video z ruky. Výběr směrového mikrofonu, řešení větru v plenéru a organizace materiálu na kartách.
+                Kdy točit CPL proti odleskům, proč mít ND na video na ostrém slunci a jak funguje difuzní filtr.
               </p>
             </div>
             <div class="series-badge" style="color: var(--text-dim);">[ Připravuje se ]</div>
@@ -1025,14 +1025,24 @@ import homepageData from '../content/homepage/index.json';
             {homepageData.contactEmail} ↗
           </a>
           <a href={homepageData.contactGithub} target="_blank" rel="noopener noreferrer" class="btn-pill btn-ghost">
-            GitHub profil ↗
+            GitHub ↗
           </a>
+          {homepageData.contactInstagram && (
+            <a href={homepageData.contactInstagram} target="_blank" rel="noopener noreferrer" class="btn-pill btn-ghost">
+              Instagram ↗
+            </a>
+          )}
+          {homepageData.contactLinkedin && (
+            <a href={homepageData.contactLinkedin} target="_blank" rel="noopener noreferrer" class="btn-pill btn-ghost">
+              LinkedIn ↗
+            </a>
+          )}
         </div>
       </section>
 
       <!-- PATIČKA -->
       <footer>
-        <div>© 2026 Patrik Rybka</div>
+        <div>© 2026 Patrik Rybka • Úžlabina</div>
         <div>patrikrybka.me</div>
       </footer>
 

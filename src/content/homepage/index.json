@@ -1,15 +1,31 @@
 {
-  "heroEyebrow": "IT Systems & Terénní Reportáž",
+  "heroEyebrow": "Úžlabina • FIT ČVUT / VUT",
   "heroTitle": "Patrik Rybka",
-  "heroDesc": "Student IT se zaměřením na počítačové sítě, Linux a hardware. Paralelně působím v terénu s bezzrcadlovkou Canon R10, kde zachycuji autentickou atmosféru letních akcí, táborů a festivalů. V obou oborech sázím na přímé, funkční a spolehlivé řešení.",
-  "aboutSystemsHeadline": "Systémy & Sítě",
-  "aboutSystemsCopy": "Věnuji se návrhu a správě LAN infrastruktur, konfiguraci směrování, přepínání a segmentaci sítí přes VLAN. Běžně pracuji v linuxovém terminálu (Debian, Ubuntu), spravuji služby přes SSH a využívám kontejnerizaci v Dockeru. K tomu patří i hardware: diagnostika komponent a stavba spolehlivých PC sestav.",
-  "aboutSystemsTags": ["TCP/IP & VLAN", "Linux / Bash", "Docker", "Git", "PC Hardware"],
-  "aboutGearHeadline": "Foto & Video kit",
-  "aboutGearCopy": "Mým hlavním pracovním nástrojem je bezzrcadlovka Canon EOS R10. Pro reportáže v běhu nasazuji univerzální zoom RF-S 18–150 mm IS STM, který pokryje celou scénu bez nutnosti měnit objektiv v prachu. Na portréty a nízké světlo používám pevnou padesátku RF 50 mm f/1.8. Výbavu doplňuje směrový mikrofon s ochranou proti větru a bi-color LED světla.",
-  "aboutGearTags": ["Canon EOS R10", "RF-S 18–150 mm", "RF 50 mm f/1.8", "Shotgun Mic + Deadcat", "Bi-Color LED"],
-  "contactHeadline": "Pojďme spolupracovat",
-  "contactCopy": "Hledáte fotografa pro vaši akci, tábor či reportáž, nebo chcete probrat síťovou infrastrukturu a Linux? Napište mi.",
-  "contactEmail": "kontakt@patrikrybka.me",
-  "contactGithub": "https://github.com/Patrik-Rybka"
+  "heroDesc": "Jsem ve třeťáku na Úžlabině na IT gymplu a chci pokračovat na FIT ČVUT nebo VUT na sítě a servery. Baví mě si železo sám poskládat a rozchodit. Když nesedím u kompu, beru foťák a fotím na táborech a akcích.",
+  "aboutSystemsHeadline": "IT, sítě a kód",
+  "aboutSystemsCopy": "Doma si stavím a zprovozňuju hardware, projekty testuju ve VirtualBoxu. Kód nepíšu ručně od nuly – jedu vibe coding přes AI a držím si to na GitHubu. K tomu řeším sítě, směrování a kyberbezpečnost, ze které budu i maturovat. Běžím na Legionu s i7 a RTX 4060.",
+  "aboutSystemsTags": [
+    "VirtualBox",
+    "Vibe coding (AI)",
+    "GitHub",
+    "Sítě & Směrování",
+    "Kyberbezpečnost",
+    "Legion RTX 4060"
+  ],
+  "aboutGearHeadline": "Foto výbava",
+  "aboutGearCopy": "Na akce a tábory tahám Canon R10. Většinu času mám nasazený 18–150 mm, abych nemusel měnit skla v prachu, a na portréty přehazuju pevnou padesátku f/1.8. Na objektivy točím CPL, NDčka a difuzní filtr. Střihám v DaVinci, fotky ladím v Lightroomu a Photoshopu.",
+  "aboutGearTags": [
+    "Canon EOS R10",
+    "RF-S 18–150 mm",
+    "RF 50 mm f/1.8",
+    "CPL / ND / Difuzní filtry",
+    "DaVinci Resolve",
+    "Lightroom & Photoshop"
+  ],
+  "contactHeadline": "Kontakt",
+  "contactCopy": "Chceš nafotit tábor nebo akci, pokecat o hardwaru nebo sítích? Napiš mi.",
+  "contactEmail": "patrikrybka2008@gmail.com",
+  "contactGithub": "https://github.com/Patrik-Rybka",
+  "contactInstagram": "https://instagram.com/",
+  "contactLinkedin": "https://linkedin.com/"
 }
