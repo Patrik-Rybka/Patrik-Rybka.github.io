@@ -11,12 +11,12 @@ import homepageData from '../content/homepage/index.json';
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
-    <title>Patrik Rybka — IT, sítě & foto z táborů</title>
-    <meta name="description" content="Student IT na Úžlabině se zájmem o sítě, servery a hardware. Terénní foto a videotvorba s Canonem R10 na táborech, akcích i pro sebe." />
+    <title>Patrik Rybka — IT, sítě & terénní foto</title>
+    <meta name="description" content="Student 3. ročníku IT na Úžlabině. Zájem o sítě, servery a hardware. Terénní foto a videotvorba s Canonem R10 na táborech a akcích." />
     <link rel="canonical" href="https://patrikrybka.me" />
 
-    <meta property="og:title" content="Patrik Rybka — IT, sítě & foto z táborů" />
-    <meta property="og:description" content="Student IT na Úžlabině se zájmem o sítě, servery a hardware. Terénní foto a videotvorba s Canonem R10 na táborech, akcích i pro sebe." />
+    <meta property="og:title" content="Patrik Rybka — IT, sítě & terénní foto" />
+    <meta property="og:description" content="Student 3. ročníku IT na Úžlabině. Zájem o sítě, servery a hardware. Terénní foto a videotvorba s Canonem R10 na táborech a akcích." />
     <meta property="og:url" content="https://patrikrybka.me" />
     <meta property="og:type" content="website" />
 
@@ -364,7 +364,7 @@ import homepageData from '../content/homepage/index.json';
       }
 
       .stat-num {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
         font-weight: 800;
         letter-spacing: -0.03em;
         color: #ffffff;
@@ -410,7 +410,7 @@ import homepageData from '../content/homepage/index.json';
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 3.5rem;
-        margin-bottom: 7rem;
+        margin-bottom: 3.5rem;
       }
 
       .split-card {
@@ -450,6 +450,85 @@ import homepageData from '../content/homepage/index.json';
         color: var(--text-muted);
         font-size: 0.98rem;
         line-height: 1.75;
+      }
+
+      /* --- KARIÉRNÍ STRIP (CV Focus & Uplatnění) --- */
+      .career-strip {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 2.75rem;
+        margin-bottom: 7rem;
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 3.5rem;
+        box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.45);
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.35s ease;
+      }
+
+      .career-strip:hover {
+        transform: translateY(-4px);
+        border-color: var(--border-active);
+        box-shadow: 0 24px 50px -10px rgba(0, 0, 0, 0.65);
+      }
+
+      .career-label {
+        display: inline-block;
+        font-size: 0.75rem;
+        font-family: var(--font-mono);
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--text-dim);
+        margin-bottom: 0.75rem;
+      }
+
+      .career-title {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #ffffff;
+        letter-spacing: -0.02em;
+        margin-bottom: 1rem;
+      }
+
+      .career-text {
+        color: var(--text-muted);
+        font-size: 0.96rem;
+        line-height: 1.75;
+      }
+
+      .career-text strong {
+        color: #ffffff;
+        font-weight: 600;
+      }
+
+      .career-skills {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        justify-content: center;
+      }
+
+      .skill-category {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        padding-left: 1.1rem;
+        border-left: 2px solid rgba(255, 255, 255, 0.18);
+      }
+
+      .skill-cat-title {
+        font-size: 0.8rem;
+        font-family: var(--font-mono);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #ffffff;
+        font-weight: 600;
+      }
+
+      .skill-cat-list {
+        font-size: 0.88rem;
+        color: var(--text-muted);
+        line-height: 1.5;
       }
 
       /* --- MAGAZÍNOVÁ FOTOGALERIE --- */
@@ -685,6 +764,13 @@ import homepageData from '../content/homepage/index.json';
         .split-section {
           grid-template-columns: 1fr;
           gap: 2rem;
+          margin-bottom: 2rem;
+        }
+        .career-strip {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+          padding: 2rem 1.5rem;
+          margin-bottom: 5rem;
         }
         .stats-strip {
           grid-template-columns: 1fr;
@@ -725,7 +811,7 @@ import homepageData from '../content/homepage/index.json';
         <a href="#" class="dock-brand">Patrik Rybka</a>
         <div class="dock-links">
           <a href="#o-mne">O mně</a>
-          <a href="#vybava">Výbava</a>
+          <a href="#vybava">Výbava & CV</a>
           <a href="#fotky">Fotky</a>
           <a href="#zapisky">Zápisky</a>
           <a href="#kontakt">Kontakt</a>
@@ -754,11 +840,11 @@ import homepageData from '../content/homepage/index.json';
             </p>
 
             <div class="hero-actions">
-              <a href="#fotky" class="btn-pill btn-white">
-                Prohlédnout fotky ↓
+              <a href="#o-mne" class="btn-pill btn-white">
+                Co umím & CV ↓
               </a>
-              <a href="#zapisky" class="btn-pill btn-ghost">
-                Číst zápisky →
+              <a href="#kontakt" class="btn-pill btn-ghost">
+                Napsat zprávu →
               </a>
             </div>
           </div>
@@ -782,16 +868,16 @@ import homepageData from '../content/homepage/index.json';
       <!-- METRIKY & PILÍŘE -->
       <section class="stats-strip">
         <div class="stat-item">
-          <span class="stat-num">Úžlabina → FIT</span>
-          <span class="stat-label">IT gympl & zájem o sítě a servery</span>
+          <span class="stat-num">Úžlabina → FIT/VUT</span>
+          <span class="stat-label">IT gympl • sítě, kyberbezpečnost</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">Sítě & Virtualizace</span>
+          <span class="stat-label">VirtualBox laby • Linux • síťový hardware</span>
         </div>
         <div class="stat-item">
           <span class="stat-num">Canon EOS R10</span>
-          <span class="stat-label">Tábory, akce i focení pro sebe</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-num">Lenovo Legion</span>
-          <span class="stat-label">Intel i7 · RTX 4060 · VirtualBox</span>
+          <span class="stat-label">Reportáže • tábory • postprodukce</span>
         </div>
       </section>
 
@@ -801,7 +887,7 @@ import homepageData from '../content/homepage/index.json';
           <div>
             <h2 class="section-title">O mně & Technika</h2>
             <p class="section-subtitle">
-              Zájem o hardware a sítě, moderní kódování a focení venku bez zbytečného teoretizování.
+              Zájem o hardware a sítě, moderní kódování a focení v terénu.
             </p>
           </div>
         </div>
@@ -826,6 +912,31 @@ import homepageData from '../content/homepage/index.json';
             </p>
           </div>
 
+        </div>
+
+        <!-- KARIÉRNÍ STRIP (CV Focus & Uplatnění) -->
+        <div class="career-strip">
+          <div class="career-focus">
+            <span class="career-label">UPLATNĚNÍ & BRIGÁDA</span>
+            <h4 class="career-title">Co mohu nabídnout & co hledám</h4>
+            <p class="career-text">
+              Otevřen studentským stážím, brigádám a juniorním pozicím: <strong>správa a konfigurace sítí, L1/L2 technická podpora, správa Linuxových stanic/serverů</strong> a hardware servis. Pro tábory a eventy nabízím <strong>kompletní reportážní foto/video servis</strong> včetně rychlé postprodukce.
+            </p>
+          </div>
+          <div class="career-skills">
+            <div class="skill-category">
+              <span class="skill-cat-title">Sítě & Systémy</span>
+              <p class="skill-cat-list">Linux (Debian, Ubuntu), VirtualBox, TCP/IP, VLAN, směrování, kyberbezpečnost</p>
+            </div>
+            <div class="skill-category">
+              <span class="skill-cat-title">Vývoj & Nástroje</span>
+              <p class="skill-cat-list">Git, GitHub, Bash, HTML/CSS, Astro, moderní AI vývojové workflow</p>
+            </div>
+            <div class="skill-category">
+              <span class="skill-cat-title">Foto & Postprodukce</span>
+              <p class="skill-cat-list">Canon EOS R10, DaVinci Resolve Studio, Adobe Lightroom, Photoshop</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -916,7 +1027,7 @@ import homepageData from '../content/homepage/index.json';
         </div>
       </section>
 
-      <!-- SERIÁL & ZÁPISKY -->
+      <!-- SERIÁL & ZÁPISKY (Publikované články bez staveniště) -->
       <section id="zapisky" class="series-section">
         <div class="section-heading-wrap">
           <div>
@@ -929,34 +1040,34 @@ import homepageData from '../content/homepage/index.json';
 
         <div class="series-stack">
           
-          <div class="series-entry" style="cursor: pointer;">
+          <a href="/blog/jak-nastavit-canon-r10-na-sport-a-pohyb" class="series-entry">
             <span class="series-number">01</span>
             <div>
               <h3 class="series-title">Jak nastavit Canon R10 na sport a pohyb, aby nebyly fotky máznuté</h3>
               <p class="series-text">
-                Bezpečné časy závěrky, tracking objektů a jak nastavit Auto ISO na akcích plných rychlého pohybu.
+                Praktické nastavení času závěrky, autofokusu se sledováním očí a Auto ISO pro akce a tábory plné rychlého pohybu.
               </p>
             </div>
-            <div class="series-badge">Připravuje se →</div>
-          </div>
+            <div class="series-badge">Číst článek →</div>
+          </a>
 
-          <div class="series-entry" style="cursor: default;">
+          <a href="/blog/proc-jsem-si-vytvoril-vlastni-web" class="series-entry">
             <span class="series-number">02</span>
             <div>
-              <h3 class="series-title">Proč mi na tábory stačí 18–150 mm a pevná 50 mm</h3>
+              <h3 class="series-title">Proč jsem si jako student IT vytvořil vlastní web a blog</h3>
               <p class="series-text">
-                Univerzální rozsah pro rychlou reportáž bez výměny skel v prachu a světelná padesátka na večer a portréty.
+                Důvody pro spuštění osobního portfolia, volba moderního stacku Astro na GitHub Pages a proč psaní článků pomáhá v učení.
               </p>
             </div>
-            <div class="series-badge" style="color: var(--text-dim);">[ Připravuje se ]</div>
-          </div>
+            <div class="series-badge">Číst článek →</div>
+          </a>
 
           <div class="series-entry" style="cursor: default;">
             <span class="series-number">03</span>
             <div>
               <h3 class="series-title">Filtry v praxi: polarizák, ND a difuzní filtr na malé bezzrcadlovce</h3>
               <p class="series-text">
-                Kdy točit CPL proti odleskům, proč mít ND na video na ostrém slunci a jak funguje difuzní filtr.
+                Kdy točit CPL proti odleskům na vodě, proč mít ND na video na ostrém slunci a jak funguje difuzní filtr.
               </p>
             </div>
             <div class="series-badge" style="color: var(--text-dim);">[ Připravuje se ]</div>
