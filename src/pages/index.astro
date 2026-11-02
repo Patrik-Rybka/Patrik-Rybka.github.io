@@ -620,6 +620,26 @@ import homepageData from '../content/homepage/index.json';
       .span-7  { grid-column: span 7; aspect-ratio: 16 / 10; }
       .span-5  { grid-column: span 5; aspect-ratio: 4 / 5; }
       .span-6  { grid-column: span 6; aspect-ratio: 16 / 10; }
+      .span-4  { grid-column: span 4; aspect-ratio: 4 / 3; }
+
+      .gallery-footer-cta {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 1.25rem 1.75rem;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid var(--border);
+      }
+
+      .gallery-footer-cta p {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        margin: 0;
+      }
 
       /* --- NÁVODY & ZÁPISKY (Editorial List) --- */
       .series-section {
@@ -779,7 +799,7 @@ import homepageData from '../content/homepage/index.json';
         .magazine-mosaic {
           grid-template-columns: 1fr;
         }
-        .span-12, .span-7, .span-5, .span-6 {
+        .span-12, .span-7, .span-5, .span-6, .span-4 {
           grid-column: span 1;
           aspect-ratio: 16 / 10;
         }
@@ -953,17 +973,17 @@ import homepageData from '../content/homepage/index.json';
 
         <div class="magazine-mosaic">
           
-          <!-- 1. Velká širokoúhlá dominanta -->
+          <!-- 1. Velká širokoúhlá dominanta: Sedlec -->
           <div class="mosaic-item span-12">
             <img 
-              src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1500&q=80" 
-              alt="Momentka z letní akce" 
+              src="/images/foto-kostel-sedlec.png" 
+              alt="Katedrála Nanebevzetí Panny Marie v Sedlci" 
               loading="lazy"
             />
             <div class="mosaic-info">
-              <h4>Momentka z akce</h4>
-              <p>Týmová energie, dění a atmosféra v plenéru</p>
-              <span class="mosaic-exif">18–150 mm · 1/500s · f/4.5</span>
+              <h4>Katedrála Nanebevzetí Panny Marie v Sedlci</h4>
+              <p>Pozdně gotická a barokně gotická architektura v podvečerním světle (Kutná Hora)</p>
+              <span class="mosaic-exif">Canon EOS R10 · 18–150 mm · f/5.6</span>
             </div>
           </div>
 
@@ -977,53 +997,102 @@ import homepageData from '../content/homepage/index.json';
             />
             <div class="mosaic-info">
               <h4>Patrik v terénu</h4>
-              <p>S bezzrcadlovkou Canon R10 na výjezdu</p>
-              <span class="mosaic-exif">Canon EOS R10 · 18–150 mm</span>
+              <p>S bezzrcadlovkou Canon EOS R10 na výjezdech a akcích</p>
+              <span class="mosaic-exif">Canon EOS R10 · RF-S 18–150 mm</span>
             </div>
           </div>
 
-          <!-- 3. Širokoúhlejší záběr -->
+          <!-- 3. Gotická katedrála: Katedrála sv. Víta -->
           <div class="mosaic-item span-7">
             <img 
-              src="https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=1000&q=80" 
-              alt="Večerní atmosféra u táboráku" 
+              src="/images/foto-katedrala-sv-vita.png" 
+              alt="Západní průčelí katedrály sv. Víta" 
               loading="lazy"
             />
             <div class="mosaic-info">
-              <h4>Večerní atmosféra u táboráku</h4>
-              <p>Focení za šera bez umělého blesku</p>
-              <span class="mosaic-exif">RF 50 mm · f/1.8 · ISO 3200</span>
+              <h4>Katedrála sv. Víta</h4>
+              <p>Západní průčelí s velkou rozetou a gotickými věžemi proti modrému nebi</p>
+              <span class="mosaic-exif">Canon EOS R10 · CPL filtr · f/6.3</span>
             </div>
           </div>
 
-          <!-- 4. Moment v pohybu -->
+          <!-- 4. Zvířata / Akce: Tygr v pohybu -->
           <div class="mosaic-item span-6">
             <img 
-              src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=900&q=80" 
-              alt="Sport v běhu" 
+              src="/images/foto-tygr-v-pohybu.png" 
+              alt="Tygr v pohybu" 
               loading="lazy"
             />
             <div class="mosaic-info">
-              <h4>Sport v běhu</h4>
-              <p>Pohotová reakce a krátký čas závěrky</p>
-              <span class="mosaic-exif">18–150 mm · 1/1000s</span>
+              <h4>Zvířata v pohybu</h4>
+              <p>Pohotová reakce, sledování objektu a rychlý čas závěrky</p>
+              <span class="mosaic-exif">Canon EOS R10 · Servo AF · 1/1000s</span>
             </div>
           </div>
 
-          <!-- 5. Detail techniky / Filtry -->
+          <!-- 5. Makro detail: Babočka admirál -->
           <div class="mosaic-item span-6">
             <img 
-              src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=900&q=80" 
-              alt="Práce se světlem a filtry" 
+              src="/images/foto-makro-babocka.png" 
+              alt="Babočka admirál na květech" 
               loading="lazy"
             />
             <div class="mosaic-info">
-              <h4>Práce se světlem a filtry</h4>
-              <p>CPL, ND a difuzní filtr na bezzrcadlovce</p>
-              <span class="mosaic-exif">RF 50 mm · f/2.2</span>
+              <h4>Babočka na květech</h4>
+              <p>Jemná kresba křídel a přirozená hloubka ostrosti na slunci</p>
+              <span class="mosaic-exif">Canon EOS R10 · RF 50 mm f/1.8</span>
             </div>
           </div>
 
+          <!-- 6. Makro detail: Kněžice na bodláku -->
+          <div class="mosaic-item span-4">
+            <img 
+              src="/images/foto-makro-knezice.png" 
+              alt="Kněžice pásovaná na suchém bodláku" 
+              loading="lazy"
+            />
+            <div class="mosaic-info">
+              <h4>Kněžice v přírodě</h4>
+              <p>Makro detail v plenéru s krémovým bokehem v pozadí</p>
+              <span class="mosaic-exif">RF 50 mm · f/2.2 · Makro</span>
+            </div>
+          </div>
+
+          <!-- 7. Táborová zákoutí: Vintage hodiny Grand Central -->
+          <div class="mosaic-item span-4">
+            <img 
+              src="/images/foto-nadrazni-hodiny.png" 
+              alt="Vintage nádražní hodiny Grand Central na táboře" 
+              loading="lazy"
+            />
+            <div class="mosaic-info">
+              <h4>Táborová atmosféra</h4>
+              <p>Retro detaily a atmosféra dětských táborů a výjezdů</p>
+              <span class="mosaic-exif">18–150 mm · Reportáž</span>
+            </div>
+          </div>
+
+          <!-- 8. Zlatá hodina: Věž sv. Víta -->
+          <div class="mosaic-item span-4">
+            <img 
+              src="/images/foto-sv-vit-detail.png" 
+              alt="Věž a orloj sv. Víta ve zlatém slunci" 
+              loading="lazy"
+            />
+            <div class="mosaic-info">
+              <h4>Zlatá hodina na věži</h4>
+              <p>Nízké podvečerní slunce zvýrazňující gotickou plastičnost a orloj</p>
+              <span class="mosaic-exif">18–150 mm · Zlatá hodina</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="gallery-footer-cta">
+          <p>Více momentek, reportáží z táborů a fotek najdete na mém profilu:</p>
+          <a href="https://www.instagram.com/patrik_rybka/" target="_blank" rel="noopener noreferrer" class="btn-pill btn-ghost">
+            Instagram @patrik_rybka ↗
+          </a>
         </div>
       </section>
 
@@ -1100,6 +1169,11 @@ import homepageData from '../content/homepage/index.json';
           {homepageData.contactLinkedin && (
             <a href={homepageData.contactLinkedin} target="_blank" rel="noopener noreferrer" class="btn-pill btn-ghost">
               LinkedIn ↗
+            </a>
+          )}
+          {homepageData.contactFacebook && (
+            <a href={homepageData.contactFacebook} target="_blank" rel="noopener noreferrer" class="btn-pill btn-ghost">
+              Facebook ↗
             </a>
           )}
         </div>

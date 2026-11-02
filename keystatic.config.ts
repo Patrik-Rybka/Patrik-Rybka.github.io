@@ -82,6 +82,10 @@ export default config({
           label: 'LinkedIn URL',
           defaultValue: 'https://www.linkedin.com/in/patrik-rybka-4546b1339',
         }),
+        contactFacebook: fields.text({
+          label: 'Facebook URL (nepovinné)',
+          defaultValue: '',
+        }),
       },
     }),
   },
