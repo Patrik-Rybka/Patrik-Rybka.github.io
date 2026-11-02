@@ -12,11 +12,11 @@ import homepageData from '../content/homepage/index.json';
     <meta name="generator" content={Astro.generator} />
 
     <title>Patrik Rybka — IT, sítě & foto z táborů</title>
-    <meta name="description" content="Student IT na Úžlabině se zaměřením na sítě, servery a hardware. Terénní foto a videotvorba s Canonem R10 na táborech a akcích." />
+    <meta name="description" content="Student IT na Úžlabině se zájmem o sítě, servery a hardware. Terénní foto a videotvorba s Canonem R10 na táborech, akcích i pro sebe." />
     <link rel="canonical" href="https://patrikrybka.me" />
 
     <meta property="og:title" content="Patrik Rybka — IT, sítě & foto z táborů" />
-    <meta property="og:description" content="Student IT na Úžlabině se zaměřením na sítě, servery a hardware. Terénní foto a videotvorba s Canonem R10 na táborech a akcích." />
+    <meta property="og:description" content="Student IT na Úžlabině se zájmem o sítě, servery a hardware. Terénní foto a videotvorba s Canonem R10 na táborech, akcích i pro sebe." />
     <meta property="og:url" content="https://patrikrybka.me" />
     <meta property="og:type" content="website" />
 
@@ -405,7 +405,7 @@ import homepageData from '../content/homepage/index.json';
         line-height: 1.6;
       }
 
-      /* --- O MNĚ & TECHNIKA (Kreativní Split) --- */
+      /* --- O MNĚ & TECHNIKA (Kreativní Split bez rámečkových štítků) --- */
       .split-section {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -418,9 +418,6 @@ import homepageData from '../content/homepage/index.json';
         border: 1px solid var(--border);
         border-radius: 16px;
         padding: 2.75rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
         box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.45);
         transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.35s ease, background-color 0.3s ease;
       }
@@ -451,35 +448,8 @@ import homepageData from '../content/homepage/index.json';
 
       .card-copy {
         color: var(--text-muted);
-        font-size: 0.95rem;
-        line-height: 1.7;
-        margin-bottom: 2.25rem;
-      }
-
-      .gear-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        padding-top: 1.5rem;
-        border-top: 1px solid var(--border);
-      }
-
-      .gear-tag {
-        font-size: 0.75rem;
-        font-family: var(--font-mono);
-        padding: 0.35rem 0.75rem;
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid var(--border);
-        border-radius: 6px;
-        color: var(--text);
-        transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-      }
-
-      .gear-tag:hover {
-        background: rgba(255, 255, 255, 0.1);
-        border-color: rgba(255, 255, 255, 0.25);
-        color: #ffffff;
-        transform: translateY(-1px);
+        font-size: 0.98rem;
+        line-height: 1.75;
       }
 
       /* --- MAGAZÍNOVÁ FOTOGALERIE --- */
@@ -801,7 +771,7 @@ import homepageData from '../content/homepage/index.json';
               loading="eager"
             />
             <div class="hero-visual-badge">
-              <span><strong>PATRIK RYBKA</strong> • TÁBORY & AKCE</span>
+              <span><strong>PATRIK RYBKA</strong> • TÁBORY & VLASTNÍ TVORBA</span>
               <span>CANON R10 · 2026</span>
             </div>
           </div>
@@ -813,11 +783,11 @@ import homepageData from '../content/homepage/index.json';
       <section class="stats-strip">
         <div class="stat-item">
           <span class="stat-num">Úžlabina → FIT</span>
-          <span class="stat-label">Sítě, servery & kyberbezpečnost</span>
+          <span class="stat-label">IT gympl & zájem o sítě a servery</span>
         </div>
         <div class="stat-item">
           <span class="stat-num">Canon EOS R10</span>
-          <span class="stat-label">18–150 mm univerzál + 50 mm f/1.8</span>
+          <span class="stat-label">Tábory, akce i focení pro sebe</span>
         </div>
         <div class="stat-item">
           <span class="stat-num">Lenovo Legion</span>
@@ -825,13 +795,13 @@ import homepageData from '../content/homepage/index.json';
         </div>
       </section>
 
-      <!-- O MNĚ & TECHNIKA -->
+      <!-- O MNĚ & TECHNIKA (Bez škatulkovacích štítků) -->
       <section id="o-mne">
         <div class="section-heading-wrap">
           <div>
             <h2 class="section-title">O mně & Technika</h2>
             <p class="section-subtitle">
-              Stavba hardwaru, sítě a focení v terénu bez zbytečného teoretizování.
+              Zájem o hardware a sítě, moderní kódování a focení venku bez zbytečného teoretizování.
             </p>
           </div>
         </div>
@@ -840,36 +810,20 @@ import homepageData from '../content/homepage/index.json';
           
           <!-- Levý sloupec: IT -->
           <div class="split-card">
-            <div>
-              <div class="card-tag">HARDWARE & SÍTĚ</div>
-              <h3 class="card-headline">{homepageData.aboutSystemsHeadline}</h3>
-              <p class="card-copy">
-                {homepageData.aboutSystemsCopy}
-              </p>
-            </div>
-            
-            <div class="gear-tags">
-              {homepageData.aboutSystemsTags.map((tag: string) => (
-                <span class="gear-tag">{tag}</span>
-              ))}
-            </div>
+            <div class="card-tag">IT & VÝVOJ</div>
+            <h3 class="card-headline">{homepageData.aboutSystemsHeadline}</h3>
+            <p class="card-copy">
+              {homepageData.aboutSystemsCopy}
+            </p>
           </div>
 
           <!-- Pravý sloupec: Foto -->
           <div class="split-card">
-            <div>
-              <div class="card-tag">FOTO VÝBAVA</div>
-              <h3 class="card-headline">{homepageData.aboutGearHeadline}</h3>
-              <p class="card-copy">
-                {homepageData.aboutGearCopy}
-              </p>
-            </div>
-
-            <div class="gear-tags">
-              {homepageData.aboutGearTags.map((tag: string) => (
-                <span class="gear-tag">{tag}</span>
-              ))}
-            </div>
+            <div class="card-tag">FOTO VÝBAVA</div>
+            <h3 class="card-headline">{homepageData.aboutGearHeadline}</h3>
+            <p class="card-copy">
+              {homepageData.aboutGearCopy}
+            </p>
           </div>
 
         </div>
@@ -881,7 +835,7 @@ import homepageData from '../content/homepage/index.json';
           <div>
             <h2 class="section-title">Fotky</h2>
             <p class="section-subtitle">
-              Momentky z táborů, sport v běhu a věci, co fotím pro radost na Instagram.
+              Momentky z táborů, sport v běhu i fotky, co cvakám jen tak pro sebe.
             </p>
           </div>
         </div>
@@ -892,11 +846,11 @@ import homepageData from '../content/homepage/index.json';
           <div class="mosaic-item span-12">
             <img 
               src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1500&q=80" 
-              alt="Momentka z tábora" 
+              alt="Momentka z letní akce" 
               loading="lazy"
             />
             <div class="mosaic-info">
-              <h4>Momentka z tábora</h4>
+              <h4>Momentka z akce</h4>
               <p>Týmová energie, dění a atmosféra v plenéru</p>
               <span class="mosaic-exif">18–150 mm · 1/500s · f/4.5</span>
             </div>

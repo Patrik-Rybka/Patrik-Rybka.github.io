@@ -24,7 +24,7 @@ export default config({
           label: 'Úvodní text (Bio)',
           multiline: true,
           defaultValue:
-            'Jsem ve třeťáku na Úžlabině na IT gymplu a chci pokračovat na FIT ČVUT nebo VUT na sítě a servery. Baví mě si železo sám poskládat a rozchodit. Když nesedím u kompu, beru foťák a fotím na táborech a akcích.',
+            'Jsem ve třeťáku na Úžlabině na IT gymplu a chci pokračovat na FIT ČVUT nebo VUT. Hodně mě baví hardware a svět sítí a serverů. Když nesedím u kompu, beru foťák a fotím na táborech, akcích i jen tak pro sebe venku.',
         }),
         aboutSystemsHeadline: fields.text({
           label: 'IT sekce - Nadpis',
@@ -34,19 +34,7 @@ export default config({
           label: 'IT sekce - Text',
           multiline: true,
           defaultValue:
-            'Doma si stavím a zprovozňuju hardware, projekty testuju ve VirtualBoxu. Kód nepíšu ručně od nuly – jedu vibe coding přes AI a držím si to na GitHubu. K tomu řeším sítě, směrování a kyberbezpečnost, ze které budu i maturovat. Běžím na Legionu s i7 a RTX 4060.',
-        }),
-        aboutSystemsTags: fields.array(fields.text({ label: 'Technologie' }), {
-          label: 'IT Technologie (Tagy)',
-          itemLabel: (props) => props.value || 'Nová technologie',
-          defaultValue: [
-            'VirtualBox',
-            'Vibe coding (AI)',
-            'GitHub',
-            'Sítě & Směrování',
-            'Kyberbezpečnost',
-            'Legion RTX 4060',
-          ],
+            'Vždycky mě lákalo železo, bastlení a jak věci fungují uvnitř. U vývoje a kódování je pro mě dneska AI primární nástroj na zrychlení práce, ale nespoléhám na něj slepě – snažím se do toho sám aktivně zapojovat, chápat architekturu a držet si projekty čisté na GitHubu. K tomu mě hodně táhnou počítačové sítě a kyberbezpečnost, ze které budu i maturovat. Doma běžím na Legionu s i7 a RTX 4060 a věci testuju ve VirtualBoxu.',
         }),
         aboutGearHeadline: fields.text({
           label: 'Foto sekce - Nadpis',
@@ -56,19 +44,7 @@ export default config({
           label: 'Foto sekce - Text',
           multiline: true,
           defaultValue:
-            'Na akce a tábory tahám Canon R10. Většinu času mám nasazený 18–150 mm, abych nemusel měnit skla v prachu, a na portréty přehazuju pevnou padesátku f/1.8. Na objektivy točím CPL, NDčka a difuzní filtr. Střihám v DaVinci, fotky ladím v Lightroomu a Photoshopu.',
-        }),
-        aboutGearTags: fields.array(fields.text({ label: 'Vybavení' }), {
-          label: 'Foto Vybavení (Tagy)',
-          itemLabel: (props) => props.value || 'Nové vybavení',
-          defaultValue: [
-            'Canon EOS R10',
-            'RF-S 18–150 mm',
-            'RF 50 mm f/1.8',
-            'CPL / ND / Difuzní filtry',
-            'DaVinci Resolve',
-            'Lightroom & Photoshop',
-          ],
+            'Na akce, tábory i na vlastní focení venku tahám Canon R10. Většinu času mám nasazený 18–150 mm, abych nemusel přehazovat skla v prachu, a na portréty nasazuju pevnou padesátku f/1.8. Na objektivy točím CPL, NDčka a difuzní filtr. Střihám v DaVinci Resolve a fotky ladím v Lightroomu a Photoshopu.',
         }),
         contactHeadline: fields.text({
           label: 'Kontakt - Nadpis',
@@ -90,11 +66,11 @@ export default config({
         }),
         contactInstagram: fields.text({
           label: 'Instagram URL',
-          defaultValue: 'https://instagram.com/',
+          defaultValue: 'https://www.instagram.com/patrik_rybka/',
         }),
         contactLinkedin: fields.text({
           label: 'LinkedIn URL',
-          defaultValue: 'https://linkedin.com/',
+          defaultValue: 'https://www.linkedin.com/in/patrik-rybka-4546b1339',
         }),
       },
     }),
